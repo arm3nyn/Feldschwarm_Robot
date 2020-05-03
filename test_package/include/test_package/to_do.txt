@@ -1,0 +1,9 @@
+*/TO DO:
+
+
+Robot controller with Teleop-- Gazebo plugin for steering  
+Launch file configuration for Rviz/Gazebo
+.dae or .stl for robot visual part (Wheel, leg, 2 frame ) lidar Stand ?
+LOAM/LeGo LOAM/ A-LOAM/ implementation in Simulation to plot trajectory
+TF publisher to save .csv file
+Plot trajectory

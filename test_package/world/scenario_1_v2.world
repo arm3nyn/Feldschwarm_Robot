@@ -1,0 +1,2525 @@
+<sdf version='1.6'>
+  <world name='default'>
+    <light name='sun' type='directional'>
+      <cast_shadows>1</cast_shadows>
+      <pose frame=''>0 0 10 0 -0 0</pose>
+      <diffuse>0.8 0.8 0.8 1</diffuse>
+      <specular>0.2 0.2 0.2 1</specular>
+      <attenuation>
+        <range>1000</range>
+        <constant>0.9</constant>
+        <linear>0.01</linear>
+        <quadratic>0.001</quadratic>
+      </attenuation>
+      <direction>-0.5 0.1 -0.9</direction>
+    </light>
+    <model name='my_ground_plane'>
+      <static>1</static>
+      <link name='link'>
+        <collision name='collision'>
+          <geometry>
+            <plane>
+              <normal>0 0 1</normal>
+              <size>105 55</size>
+            </plane>
+          </geometry>
+          <surface>
+            <friction>
+              <ode>
+                <mu>100</mu>
+                <mu2>50</mu2>
+              </ode>
+              <torsional>
+                <ode/>
+              </torsional>
+            </friction>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+          </surface>
+          <max_contacts>10</max_contacts>
+        </collision>
+        <visual name='visual'>
+          <cast_shadows>0</cast_shadows>
+          <geometry>
+            <plane>
+              <normal>0 0 1</normal>
+              <size>105 55</size>
+            </plane>
+          </geometry>
+          <material>
+            <script>
+              <uri>model://my_ground_plane/materials/scripts</uri>
+              <uri>model://my_ground_plane/materials/textures/</uri>
+              <name>MyGroundPlane/Image</name>
+            </script>
+          </material>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+    </model>
+    <scene>
+      <sky>
+        <clouds>
+          <speed>12</speed>
+        </clouds>
+      </sky>
+      <ambient>0.4 0.4 0.4 1</ambient>
+      <background>0.7 0.7 0.7 1</background>
+      <shadows>1</shadows>
+    </scene>
+    <model name='Testoval_Inseln'>
+      <static>1</static>
+      <link name='Mittelinseln::link_12'>
+        <inertial>
+          <mass>1</mass>
+          <inertia>
+            <ixx>0.166667</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>0.166667</iyy>
+            <iyz>0</iyz>
+            <izz>0.166667</izz>
+          </inertia>
+          <pose frame=''>0 0 0 0 -0 0</pose>
+        </inertial>
+        <pose frame=''>25 0 0 0 0 -1.5708</pose>
+        <gravity>1</gravity>
+        <self_collide>0</self_collide>
+        <kinematic>0</kinematic>
+        <enable_wind>0</enable_wind>
+        <visual name='visual'>
+          <pose frame=''>0 0 0 0 -0 0</pose>
+          <geometry>
+            <polyline>
+              <height>0.1</height>
+              <point>-20 -0.00245803</point>
+              <point>-19.9941 -0.460757</point>
+              <point>-19.9778 -0.918258</point>
+              <point>-19.951 -1.37479</point>
+              <point>-19.9138 -1.83017</point>
+              <point>-19.8663 -2.28423</point>
+              <point>-19.8084 -2.73679</point>
+              <point>-19.7403 -3.18769</point>
+              <point>-19.662 -3.63675</point>
+              <point>-19.5734 -4.08379</point>
+              <point>-19.4748 -4.52864</point>
+              <point>-19.366 -4.97113</point>
+              <point>-19.2471 -5.41108</point>
+              <point>-19.1182 -5.84832</point>
+              <point>-18.9794 -6.28267</point>
+              <point>-18.8305 -6.71397</point>
+              <point>-18.6718 -7.14203</point>
+              <point>-18.5032 -7.56668</point>
+              <point>-18.3248 -7.98776</point>
+              <point>-18.1366 -8.40508</point>
+              <point>-17.9387 -8.81847</point>
+              <point>-17.6776 -8.69175</point>
+              <point>-17.4139 -8.57127</point>
+              <point>-17.1478 -8.45705</point>
+              <point>-16.8794 -8.34913</point>
+              <point>-16.6088 -8.24753</point>
+              <point>-16.3361 -8.15227</point>
+              <point>-16.0614 -8.06338</point>
+              <point>-15.7848 -7.9809</point>
+              <point>-15.5065 -7.90484</point>
+              <point>-15.2265 -7.83523</point>
+              <point>-14.945 -7.7721</point>
+              <point>-14.6621 -7.71548</point>
+              <point>-14.3778 -7.66539</point>
+              <point>-14.0924 -7.62186</point>
+              <point>-13.8059 -7.58492</point>
+              <point>-13.5184 -7.55459</point>
+              <point>-13.2301 -7.5309</point>
+              <point>-12.9411 -7.51387</point>
+              <point>-12.6514 -7.50354</point>
+              <point>-12.3611 -7.49993</point>
+              <point>-11.3361 -7.54137</point>
+              <point>-10.3339 -7.66351</point>
+              <point>-9.35764 -7.86314</point>
+              <point>-8.41068 -8.13705</point>
+              <point>-7.49618 -8.48203</point>
+              <point>-6.61736 -8.89485</point>
+              <point>-5.77743 -9.3723</point>
+              <point>-4.97962 -9.91116</point>
+              <point>-4.22713 -10.5082</point>
+              <point>-3.52319 -11.1603</point>
+              <point>-2.871 -11.8641</point>
+              <point>-2.27379 -12.6165</point>
+              <point>-1.73477 -13.4142</point>
+              <point>-1.25716 -14.254</point>
+              <point>-0.844178 -15.1328</point>
+              <point>-0.499031 -16.0472</point>
+              <point>-0.22494 -16.9941</point>
+              <point>-0.02512 -17.9703</point>
+              <point>0.0972118 -18.9725</point>
+              <point>0.13884 -19.9975</point>
+              <point>1.77052 -19.9206</point>
+              <point>3.36534 -19.7159</point>
+              <point>4.91823 -19.3886</point>
+              <point>6.42414 -18.9438</point>
+              <point>7.87801 -18.3866</point>
+              <point>9.27477 -17.722</point>
+              <point>10.6094 -16.9553</point>
+              <point>11.8767 -16.0914</point>
+              <point>13.0718 -15.1354</point>
+              <point>14.1896 -14.0926</point>
+              <point>15.2249 -12.9678</point>
+              <point>16.1728 -11.7663</point>
+              <point>17.0282 -10.4932</point>
+              <point>17.7859 -9.15347</point>
+              <point>18.4411 -7.75228</point>
+              <point>18.9885 -6.2947</point>
+              <point>19.4232 -4.78584</point>
+              <point>19.74 -3.23078</point>
+              <point>19.934 -1.63462</point>
+              <point>20 -0.00246093</point>
+              <point>19.9843 0.791423</point>
+              <point>19.9373 1.58121</point>
+              <point>19.8593 2.36605</point>
+              <point>19.7509 3.14512</point>
+              <point>19.6122 3.91757</point>
+              <point>19.4436 4.68257</point>
+              <point>19.2455 5.43927</point>
+              <point>19.0182 6.18684</point>
+              <point>18.7622 6.92443</point>
+              <point>18.4776 7.65121</point>
+              <point>18.1649 8.36634</point>
+              <point>17.8244 9.06898</point>
+              <point>17.4565 9.75829</point>
+              <point>17.0615 10.4334</point>
+              <point>16.6398 11.0936</point>
+              <point>16.1916 11.7378</point>
+              <point>15.7175 12.3654</point>
+              <point>15.2176 12.9755</point>
+              <point>14.6924 13.5672</point>
+              <point>14.1421 14.1397</point>
+              <point>13.5696 14.6899</point>
+              <point>12.9779 15.2151</point>
+              <point>12.3679 15.715</point>
+              <point>11.7403 16.1892</point>
+              <point>11.096 16.6373</point>
+              <point>10.4359 17.059</point>
+              <point>9.76074 17.454</point>
+              <point>9.07144 17.822</point>
+              <point>8.3688 18.1624</point>
+              <point>7.65367 18.4751</point>
+              <point>6.92689 18.7597</point>
+              <point>6.18929 19.0158</point>
+              <point>5.44172 19.243</point>
+              <point>4.68502 19.4411</point>
+              <point>3.92003 19.6097</point>
+              <point>3.14757 19.7484</point>
+              <point>2.36851 19.8569</point>
+              <point>1.58366 19.9348</point>
+              <point>0.793878 19.9818</point>
+              <point>-1.83407e-06 19.9975</point>
+              <point>-0.79388 19.9818</point>
+              <point>-1.58366 19.9348</point>
+              <point>-2.36851 19.8569</point>
+              <point>-3.14758 19.7484</point>
+              <point>-3.92003 19.6097</point>
+              <point>-4.68502 19.4411</point>
+              <point>-5.44173 19.243</point>
+              <point>-6.18929 19.0158</point>
+              <point>-6.92689 18.7597</point>
+              <point>-7.65367 18.4751</point>
+              <point>-8.3688 18.1624</point>
+              <point>-9.07144 17.822</point>
+              <point>-9.76074 17.454</point>
+              <point>-10.4359 17.059</point>
+              <point>-11.096 16.6373</point>
+              <point>-11.7403 16.1892</point>
+              <point>-12.3679 15.715</point>
+              <point>-12.9779 15.2151</point>
+              <point>-13.5696 14.6899</point>
+              <point>-14.1421 14.1397</point>
+              <point>-14.6924 13.5672</point>
+              <point>-15.2176 12.9755</point>
+              <point>-15.7175 12.3654</point>
+              <point>-16.1916 11.7378</point>
+              <point>-16.6398 11.0936</point>
+              <point>-17.0615 10.4334</point>
+              <point>-17.4565 9.75829</point>
+              <point>-17.8244 9.06898</point>
+              <point>-18.1649 8.36634</point>
+              <point>-18.4776 7.65121</point>
+              <point>-18.7622 6.92443</point>
+              <point>-19.0182 6.18683</point>
+              <point>-19.2455 5.43927</point>
+              <point>-19.4436 4.68256</point>
+              <point>-19.6122 3.91757</point>
+              <point>-19.7509 3.14512</point>
+              <point>-19.8593 2.36605</point>
+              <point>-19.9372 1.5812</point>
+              <point>-19.9843 0.791421</point>
+              <point>-20 -0.0024589</point>
+            </polyline>
+          </geometry>
+          <material>
+            <script>
+              <uri>model://Mittelinseln/materials/scripts</uri>
+              <uri>model://Mittelinseln/materials/textures/</uri>
+              <name>Mittelinseln/Image</name>
+            </script>
+          </material>
+          <transparency>0</transparency>
+          <cast_shadows>1</cast_shadows>
+        </visual>
+        <collision name='collision'>
+          <laser_retro>0</laser_retro>
+          <max_contacts>10</max_contacts>
+          <pose frame=''>0 0 0 0 -0 0</pose>
+          <geometry>
+            <polyline>
+              <height>0.1</height>
+              <point>-20 -0.00245803</point>
+              <point>-19.9941 -0.460757</point>
+              <point>-19.9778 -0.918258</point>
+              <point>-19.951 -1.37479</point>
+              <point>-19.9138 -1.83017</point>
+              <point>-19.8663 -2.28423</point>
+              <point>-19.8084 -2.73679</point>
+              <point>-19.7403 -3.18769</point>
+              <point>-19.662 -3.63675</point>
+              <point>-19.5734 -4.08379</point>
+              <point>-19.4748 -4.52864</point>
+              <point>-19.366 -4.97113</point>
+              <point>-19.2471 -5.41108</point>
+              <point>-19.1182 -5.84832</point>
+              <point>-18.9794 -6.28267</point>
+              <point>-18.8305 -6.71397</point>
+              <point>-18.6718 -7.14203</point>
+              <point>-18.5032 -7.56668</point>
+              <point>-18.3248 -7.98776</point>
+              <point>-18.1366 -8.40508</point>
+              <point>-17.9387 -8.81847</point>
+              <point>-17.6776 -8.69175</point>
+              <point>-17.4139 -8.57127</point>
+              <point>-17.1478 -8.45705</point>
+              <point>-16.8794 -8.34913</point>
+              <point>-16.6088 -8.24753</point>
+              <point>-16.3361 -8.15227</point>
+              <point>-16.0614 -8.06338</point>
+              <point>-15.7848 -7.9809</point>
+              <point>-15.5065 -7.90484</point>
+              <point>-15.2265 -7.83523</point>
+              <point>-14.945 -7.7721</point>
+              <point>-14.6621 -7.71548</point>
+              <point>-14.3778 -7.66539</point>
+              <point>-14.0924 -7.62186</point>
+              <point>-13.8059 -7.58492</point>
+              <point>-13.5184 -7.55459</point>
+              <point>-13.2301 -7.5309</point>
+              <point>-12.9411 -7.51387</point>
+              <point>-12.6514 -7.50354</point>
+              <point>-12.3611 -7.49993</point>
+              <point>-11.3361 -7.54137</point>
+              <point>-10.3339 -7.66351</point>
+              <point>-9.35764 -7.86314</point>
+              <point>-8.41068 -8.13705</point>
+              <point>-7.49618 -8.48203</point>
+              <point>-6.61736 -8.89485</point>
+              <point>-5.77743 -9.3723</point>
+              <point>-4.97962 -9.91116</point>
+              <point>-4.22713 -10.5082</point>
+              <point>-3.52319 -11.1603</point>
+              <point>-2.871 -11.8641</point>
+              <point>-2.27379 -12.6165</point>
+              <point>-1.73477 -13.4142</point>
+              <point>-1.25716 -14.254</point>
+              <point>-0.844178 -15.1328</point>
+              <point>-0.499031 -16.0472</point>
+              <point>-0.22494 -16.9941</point>
+              <point>-0.02512 -17.9703</point>
+              <point>0.0972118 -18.9725</point>
+              <point>0.13884 -19.9975</point>
+              <point>1.77052 -19.9206</point>
+              <point>3.36534 -19.7159</point>
+              <point>4.91823 -19.3886</point>
+              <point>6.42414 -18.9438</point>
+              <point>7.87801 -18.3866</point>
+              <point>9.27477 -17.722</point>
+              <point>10.6094 -16.9553</point>
+              <point>11.8767 -16.0914</point>
+              <point>13.0718 -15.1354</point>
+              <point>14.1896 -14.0926</point>
+              <point>15.2249 -12.9678</point>
+              <point>16.1728 -11.7663</point>
+              <point>17.0282 -10.4932</point>
+              <point>17.7859 -9.15347</point>
+              <point>18.4411 -7.75228</point>
+              <point>18.9885 -6.2947</point>
+              <point>19.4232 -4.78584</point>
+              <point>19.74 -3.23078</point>
+              <point>19.934 -1.63462</point>
+              <point>20 -0.00246093</point>
+              <point>19.9843 0.791423</point>
+              <point>19.9373 1.58121</point>
+              <point>19.8593 2.36605</point>
+              <point>19.7509 3.14512</point>
+              <point>19.6122 3.91757</point>
+              <point>19.4436 4.68257</point>
+              <point>19.2455 5.43927</point>
+              <point>19.0182 6.18684</point>
+              <point>18.7622 6.92443</point>
+              <point>18.4776 7.65121</point>
+              <point>18.1649 8.36634</point>
+              <point>17.8244 9.06898</point>
+              <point>17.4565 9.75829</point>
+              <point>17.0615 10.4334</point>
+              <point>16.6398 11.0936</point>
+              <point>16.1916 11.7378</point>
+              <point>15.7175 12.3654</point>
+              <point>15.2176 12.9755</point>
+              <point>14.6924 13.5672</point>
+              <point>14.1421 14.1397</point>
+              <point>13.5696 14.6899</point>
+              <point>12.9779 15.2151</point>
+              <point>12.3679 15.715</point>
+              <point>11.7403 16.1892</point>
+              <point>11.096 16.6373</point>
+              <point>10.4359 17.059</point>
+              <point>9.76074 17.454</point>
+              <point>9.07144 17.822</point>
+              <point>8.3688 18.1624</point>
+              <point>7.65367 18.4751</point>
+              <point>6.92689 18.7597</point>
+              <point>6.18929 19.0158</point>
+              <point>5.44172 19.243</point>
+              <point>4.68502 19.4411</point>
+              <point>3.92003 19.6097</point>
+              <point>3.14757 19.7484</point>
+              <point>2.36851 19.8569</point>
+              <point>1.58366 19.9348</point>
+              <point>0.793878 19.9818</point>
+              <point>-1.83407e-06 19.9975</point>
+              <point>-0.79388 19.9818</point>
+              <point>-1.58366 19.9348</point>
+              <point>-2.36851 19.8569</point>
+              <point>-3.14758 19.7484</point>
+              <point>-3.92003 19.6097</point>
+              <point>-4.68502 19.4411</point>
+              <point>-5.44173 19.243</point>
+              <point>-6.18929 19.0158</point>
+              <point>-6.92689 18.7597</point>
+              <point>-7.65367 18.4751</point>
+              <point>-8.3688 18.1624</point>
+              <point>-9.07144 17.822</point>
+              <point>-9.76074 17.454</point>
+              <point>-10.4359 17.059</point>
+              <point>-11.096 16.6373</point>
+              <point>-11.7403 16.1892</point>
+              <point>-12.3679 15.715</point>
+              <point>-12.9779 15.2151</point>
+              <point>-13.5696 14.6899</point>
+              <point>-14.1421 14.1397</point>
+              <point>-14.6924 13.5672</point>
+              <point>-15.2176 12.9755</point>
+              <point>-15.7175 12.3654</point>
+              <point>-16.1916 11.7378</point>
+              <point>-16.6398 11.0936</point>
+              <point>-17.0615 10.4334</point>
+              <point>-17.4565 9.75829</point>
+              <point>-17.8244 9.06898</point>
+              <point>-18.1649 8.36634</point>
+              <point>-18.4776 7.65121</point>
+              <point>-18.7622 6.92443</point>
+              <point>-19.0182 6.18683</point>
+              <point>-19.2455 5.43927</point>
+              <point>-19.4436 4.68256</point>
+              <point>-19.6122 3.91757</point>
+              <point>-19.7509 3.14512</point>
+              <point>-19.8593 2.36605</point>
+              <point>-19.9372 1.5812</point>
+              <point>-19.9843 0.791421</point>
+              <point>-20 -0.0024589</point>
+            </polyline>
+          </geometry>
+          <surface>
+            <friction>
+              <ode>
+                <mu>1</mu>
+                <mu2>1</mu2>
+                <fdir1>0 0 0</fdir1>
+                <slip1>0</slip1>
+                <slip2>0</slip2>
+              </ode>
+              <torsional>
+                <coefficient>1</coefficient>
+                <patch_radius>0</patch_radius>
+                <surface_radius>0</surface_radius>
+                <use_patch_radius>1</use_patch_radius>
+                <ode>
+                  <slip>0</slip>
+                </ode>
+              </torsional>
+            </friction>
+            <bounce>
+              <restitution_coefficient>0</restitution_coefficient>
+              <threshold>1e+06</threshold>
+            </bounce>
+            <contact>
+              <collide_without_contact>0</collide_without_contact>
+              <collide_without_contact_bitmask>1</collide_without_contact_bitmask>
+              <collide_bitmask>1</collide_bitmask>
+              <ode>
+                <soft_cfm>0</soft_cfm>
+                <soft_erp>0.2</soft_erp>
+                <kp>1e+13</kp>
+                <kd>1</kd>
+                <max_vel>0.01</max_vel>
+                <min_depth>0</min_depth>
+              </ode>
+              <bullet>
+                <split_impulse>1</split_impulse>
+                <split_impulse_penetration_threshold>-0.01</split_impulse_penetration_threshold>
+                <soft_cfm>0</soft_cfm>
+                <soft_erp>0.2</soft_erp>
+                <kp>1e+13</kp>
+                <kd>1</kd>
+              </bullet>
+            </contact>
+          </surface>
+        </collision>
+      </link>
+      <link name='Mittelinseln::link_13'>
+        <inertial>
+          <mass>1</mass>
+          <inertia>
+            <ixx>0.166667</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>0.166667</iyy>
+            <iyz>0</iyz>
+            <izz>0.166667</izz>
+          </inertia>
+          <pose frame=''>0 0 0 0 -0 0</pose>
+        </inertial>
+        <pose frame=''>-25 -0.020217 0 0 0 -1.5708</pose>
+        <gravity>1</gravity>
+        <self_collide>0</self_collide>
+        <kinematic>0</kinematic>
+        <enable_wind>0</enable_wind>
+        <visual name='visual'>
+          <pose frame=''>0 0 0 0 -0 0</pose>
+          <geometry>
+            <polyline>
+              <height>0.1</height>
+              <point>-20 0.000805055</point>
+              <point>-19.9843 -0.793074</point>
+              <point>-19.9372 -1.58286</point>
+              <point>-19.8593 -2.3677</point>
+              <point>-19.7509 -3.14677</point>
+              <point>-19.6122 -3.91922</point>
+              <point>-19.4436 -4.68422</point>
+              <point>-19.2455 -5.44092</point>
+              <point>-19.0182 -6.18849</point>
+              <point>-18.7622 -6.92608</point>
+              <point>-18.4776 -7.65286</point>
+              <point>-18.1649 -8.36799</point>
+              <point>-17.8244 -9.07063</point>
+              <point>-17.4565 -9.75994</point>
+              <point>-17.0615 -10.4351</point>
+              <point>-16.6398 -11.0952</point>
+              <point>-16.1916 -11.7395</point>
+              <point>-15.7175 -12.3671</point>
+              <point>-15.2176 -12.9771</point>
+              <point>-14.6924 -13.5688</point>
+              <point>-14.1421 -14.1413</point>
+              <point>-13.5696 -14.6916</point>
+              <point>-12.9779 -15.2168</point>
+              <point>-12.3679 -15.7167</point>
+              <point>-11.7403 -16.1908</point>
+              <point>-11.096 -16.639</point>
+              <point>-10.4359 -17.0607</point>
+              <point>-9.76074 -17.4557</point>
+              <point>-9.07144 -17.8236</point>
+              <point>-8.3688 -18.1641</point>
+              <point>-7.65367 -18.4768</point>
+              <point>-6.92689 -18.7614</point>
+              <point>-6.18929 -19.0174</point>
+              <point>-5.44173 -19.2447</point>
+              <point>-4.68502 -19.4428</point>
+              <point>-3.92003 -19.6114</point>
+              <point>-3.14758 -19.75</point>
+              <point>-2.36851 -19.8585</point>
+              <point>-1.58366 -19.9364</point>
+              <point>-0.79388 -19.9835</point>
+              <point>-1.8795e-07 -19.9992</point>
+              <point>0.793878 -19.9834</point>
+              <point>1.58366 -19.9364</point>
+              <point>2.36851 -19.8585</point>
+              <point>3.14757 -19.75</point>
+              <point>3.92003 -19.6114</point>
+              <point>4.68502 -19.4428</point>
+              <point>5.44172 -19.2447</point>
+              <point>6.18929 -19.0174</point>
+              <point>6.92689 -18.7614</point>
+              <point>7.65367 -18.4768</point>
+              <point>8.3688 -18.1641</point>
+              <point>9.07144 -17.8236</point>
+              <point>9.76074 -17.4557</point>
+              <point>10.4359 -17.0607</point>
+              <point>11.096 -16.639</point>
+              <point>11.7403 -16.1908</point>
+              <point>12.3679 -15.7167</point>
+              <point>12.9779 -15.2168</point>
+              <point>13.5696 -14.6916</point>
+              <point>14.1421 -14.1413</point>
+              <point>14.6924 -13.5688</point>
+              <point>15.2176 -12.9771</point>
+              <point>15.7175 -12.3671</point>
+              <point>16.1916 -11.7395</point>
+              <point>16.6398 -11.0952</point>
+              <point>17.0615 -10.4351</point>
+              <point>17.4565 -9.75994</point>
+              <point>17.8244 -9.07063</point>
+              <point>18.1649 -8.36799</point>
+              <point>18.4776 -7.65286</point>
+              <point>18.7622 -6.92608</point>
+              <point>19.0182 -6.18849</point>
+              <point>19.2455 -5.44092</point>
+              <point>19.4436 -4.68422</point>
+              <point>19.6122 -3.91922</point>
+              <point>19.7509 -3.14677</point>
+              <point>19.8593 -2.3677</point>
+              <point>19.9372 -1.58286</point>
+              <point>19.9843 -0.793076</point>
+              <point>20 0.000804181</point>
+              <point>19.9337 1.6392</point>
+              <point>19.7386 3.24119</point>
+              <point>19.4197 4.80164</point>
+              <point>18.9821 6.31542</point>
+              <point>18.4311 7.77741</point>
+              <point>17.7717 9.18245</point>
+              <point>17.0091 10.5254</point>
+              <point>16.1483 11.8012</point>
+              <point>15.1946 13.0046</point>
+              <point>14.1529 14.1305</point>
+              <point>13.0286 15.1739</point>
+              <point>11.8266 16.1295</point>
+              <point>10.5522 16.9922</point>
+              <point>9.21038 17.7569</point>
+              <point>7.80634 18.4184</point>
+              <point>6.34521 18.9717</point>
+              <point>4.83209 19.4115</point>
+              <point>3.27213 19.7328</point>
+              <point>1.67044 19.9304</point>
+              <point>0.0321509 19.9992</point>
+              <point>-0.00937935 18.9741</point>
+              <point>-0.131627 17.9718</point>
+              <point>-0.331375 16.9955</point>
+              <point>-0.605408 16.0485</point>
+              <point>-0.950507 15.134</point>
+              <point>-1.36346 14.2552</point>
+              <point>-1.84104 13.4153</point>
+              <point>-2.38005 12.6175</point>
+              <point>-2.97725 11.865</point>
+              <point>-3.62944 11.1611</point>
+              <point>-4.3334 10.509</point>
+              <point>-5.08591 9.91185</point>
+              <point>-5.88375 9.37292</point>
+              <point>-6.72371 8.89541</point>
+              <point>-7.60258 8.48254</point>
+              <point>-8.51713 8.13753</point>
+              <point>-9.46415 7.86358</point>
+              <point>-10.4404 7.66392</point>
+              <point>-11.4427 7.54177</point>
+              <point>-12.4679 7.50033</point>
+              <point>-12.7524 7.50438</point>
+              <point>-13.0365 7.51488</point>
+              <point>-13.3199 7.53182</point>
+              <point>-13.6026 7.55517</point>
+              <point>-13.8845 7.58491</point>
+              <point>-14.1655 7.621</point>
+              <point>-14.4455 7.66344</point>
+              <point>-14.7243 7.71218</point>
+              <point>-15.0018 7.7672</point>
+              <point>-15.2781 7.82849</point>
+              <point>-15.5528 7.89602</point>
+              <point>-15.826 7.96975</point>
+              <point>-16.0975 8.04967</point>
+              <point>-16.3673 8.13575</point>
+              <point>-16.6352 8.22797</point>
+              <point>-16.901 8.3263</point>
+              <point>-17.1648 8.43071</point>
+              <point>-17.4264 8.54119</point>
+              <point>-17.6856 8.6577</point>
+              <point>-17.9425 8.78023</point>
+              <point>-18.1395 8.36847</point>
+              <point>-18.3268 7.95282</point>
+              <point>-18.5044 7.53344</point>
+              <point>-18.6722 7.11051</point>
+              <point>-18.8303 6.68421</point>
+              <point>-18.9785 6.25469</point>
+              <point>-19.1169 5.82214</point>
+              <point>-19.2454 5.38672</point>
+              <point>-19.3639 4.94862</point>
+              <point>-19.4725 4.50799</point>
+              <point>-19.571 4.06501</point>
+              <point>-19.6595 3.61985</point>
+              <point>-19.7378 3.17269</point>
+              <point>-19.806 2.72369</point>
+              <point>-19.8641 2.27303</point>
+              <point>-19.9119 1.82088</point>
+              <point>-19.9494 1.36741</point>
+              <point>-19.9766 0.912795</point>
+              <point>-19.9935 0.457203</point>
+              <point>-20 0.000805823</point>
+            </polyline>
+          </geometry>
+          <material>
+            <script>
+              <uri>model://Mittelinseln/materials/scripts</uri>
+              <uri>model://Mittelinseln/materials/textures/</uri>
+              <name>Mittelinseln/Image</name>
+            </script>
+          </material>
+          <transparency>0</transparency>
+          <cast_shadows>1</cast_shadows>
+        </visual>
+        <collision name='collision'>
+          <laser_retro>0</laser_retro>
+          <max_contacts>10</max_contacts>
+          <pose frame=''>0 0 0 0 -0 0</pose>
+          <geometry>
+            <polyline>
+              <height>0.1</height>
+              <point>-20 0.000805055</point>
+              <point>-19.9843 -0.793074</point>
+              <point>-19.9372 -1.58286</point>
+              <point>-19.8593 -2.3677</point>
+              <point>-19.7509 -3.14677</point>
+              <point>-19.6122 -3.91922</point>
+              <point>-19.4436 -4.68422</point>
+              <point>-19.2455 -5.44092</point>
+              <point>-19.0182 -6.18849</point>
+              <point>-18.7622 -6.92608</point>
+              <point>-18.4776 -7.65286</point>
+              <point>-18.1649 -8.36799</point>
+              <point>-17.8244 -9.07063</point>
+              <point>-17.4565 -9.75994</point>
+              <point>-17.0615 -10.4351</point>
+              <point>-16.6398 -11.0952</point>
+              <point>-16.1916 -11.7395</point>
+              <point>-15.7175 -12.3671</point>
+              <point>-15.2176 -12.9771</point>
+              <point>-14.6924 -13.5688</point>
+              <point>-14.1421 -14.1413</point>
+              <point>-13.5696 -14.6916</point>
+              <point>-12.9779 -15.2168</point>
+              <point>-12.3679 -15.7167</point>
+              <point>-11.7403 -16.1908</point>
+              <point>-11.096 -16.639</point>
+              <point>-10.4359 -17.0607</point>
+              <point>-9.76074 -17.4557</point>
+              <point>-9.07144 -17.8236</point>
+              <point>-8.3688 -18.1641</point>
+              <point>-7.65367 -18.4768</point>
+              <point>-6.92689 -18.7614</point>
+              <point>-6.18929 -19.0174</point>
+              <point>-5.44173 -19.2447</point>
+              <point>-4.68502 -19.4428</point>
+              <point>-3.92003 -19.6114</point>
+              <point>-3.14758 -19.75</point>
+              <point>-2.36851 -19.8585</point>
+              <point>-1.58366 -19.9364</point>
+              <point>-0.79388 -19.9835</point>
+              <point>-1.8795e-07 -19.9992</point>
+              <point>0.793878 -19.9834</point>
+              <point>1.58366 -19.9364</point>
+              <point>2.36851 -19.8585</point>
+              <point>3.14757 -19.75</point>
+              <point>3.92003 -19.6114</point>
+              <point>4.68502 -19.4428</point>
+              <point>5.44172 -19.2447</point>
+              <point>6.18929 -19.0174</point>
+              <point>6.92689 -18.7614</point>
+              <point>7.65367 -18.4768</point>
+              <point>8.3688 -18.1641</point>
+              <point>9.07144 -17.8236</point>
+              <point>9.76074 -17.4557</point>
+              <point>10.4359 -17.0607</point>
+              <point>11.096 -16.639</point>
+              <point>11.7403 -16.1908</point>
+              <point>12.3679 -15.7167</point>
+              <point>12.9779 -15.2168</point>
+              <point>13.5696 -14.6916</point>
+              <point>14.1421 -14.1413</point>
+              <point>14.6924 -13.5688</point>
+              <point>15.2176 -12.9771</point>
+              <point>15.7175 -12.3671</point>
+              <point>16.1916 -11.7395</point>
+              <point>16.6398 -11.0952</point>
+              <point>17.0615 -10.4351</point>
+              <point>17.4565 -9.75994</point>
+              <point>17.8244 -9.07063</point>
+              <point>18.1649 -8.36799</point>
+              <point>18.4776 -7.65286</point>
+              <point>18.7622 -6.92608</point>
+              <point>19.0182 -6.18849</point>
+              <point>19.2455 -5.44092</point>
+              <point>19.4436 -4.68422</point>
+              <point>19.6122 -3.91922</point>
+              <point>19.7509 -3.14677</point>
+              <point>19.8593 -2.3677</point>
+              <point>19.9372 -1.58286</point>
+              <point>19.9843 -0.793076</point>
+              <point>20 0.000804181</point>
+              <point>19.9337 1.6392</point>
+              <point>19.7386 3.24119</point>
+              <point>19.4197 4.80164</point>
+              <point>18.9821 6.31542</point>
+              <point>18.4311 7.77741</point>
+              <point>17.7717 9.18245</point>
+              <point>17.0091 10.5254</point>
+              <point>16.1483 11.8012</point>
+              <point>15.1946 13.0046</point>
+              <point>14.1529 14.1305</point>
+              <point>13.0286 15.1739</point>
+              <point>11.8266 16.1295</point>
+              <point>10.5522 16.9922</point>
+              <point>9.21038 17.7569</point>
+              <point>7.80634 18.4184</point>
+              <point>6.34521 18.9717</point>
+              <point>4.83209 19.4115</point>
+              <point>3.27213 19.7328</point>
+              <point>1.67044 19.9304</point>
+              <point>0.0321509 19.9992</point>
+              <point>-0.00937935 18.9741</point>
+              <point>-0.131627 17.9718</point>
+              <point>-0.331375 16.9955</point>
+              <point>-0.605408 16.0485</point>
+              <point>-0.950507 15.134</point>
+              <point>-1.36346 14.2552</point>
+              <point>-1.84104 13.4153</point>
+              <point>-2.38005 12.6175</point>
+              <point>-2.97725 11.865</point>
+              <point>-3.62944 11.1611</point>
+              <point>-4.3334 10.509</point>
+              <point>-5.08591 9.91185</point>
+              <point>-5.88375 9.37292</point>
+              <point>-6.72371 8.89541</point>
+              <point>-7.60258 8.48254</point>
+              <point>-8.51713 8.13753</point>
+              <point>-9.46415 7.86358</point>
+              <point>-10.4404 7.66392</point>
+              <point>-11.4427 7.54177</point>
+              <point>-12.4679 7.50033</point>
+              <point>-12.7524 7.50438</point>
+              <point>-13.0365 7.51488</point>
+              <point>-13.3199 7.53182</point>
+              <point>-13.6026 7.55517</point>
+              <point>-13.8845 7.58491</point>
+              <point>-14.1655 7.621</point>
+              <point>-14.4455 7.66344</point>
+              <point>-14.7243 7.71218</point>
+              <point>-15.0018 7.7672</point>
+              <point>-15.2781 7.82849</point>
+              <point>-15.5528 7.89602</point>
+              <point>-15.826 7.96975</point>
+              <point>-16.0975 8.04967</point>
+              <point>-16.3673 8.13575</point>
+              <point>-16.6352 8.22797</point>
+              <point>-16.901 8.3263</point>
+              <point>-17.1648 8.43071</point>
+              <point>-17.4264 8.54119</point>
+              <point>-17.6856 8.6577</point>
+              <point>-17.9425 8.78023</point>
+              <point>-18.1395 8.36847</point>
+              <point>-18.3268 7.95282</point>
+              <point>-18.5044 7.53344</point>
+              <point>-18.6722 7.11051</point>
+              <point>-18.8303 6.68421</point>
+              <point>-18.9785 6.25469</point>
+              <point>-19.1169 5.82214</point>
+              <point>-19.2454 5.38672</point>
+              <point>-19.3639 4.94862</point>
+              <point>-19.4725 4.50799</point>
+              <point>-19.571 4.06501</point>
+              <point>-19.6595 3.61985</point>
+              <point>-19.7378 3.17269</point>
+              <point>-19.806 2.72369</point>
+              <point>-19.8641 2.27303</point>
+              <point>-19.9119 1.82088</point>
+              <point>-19.9494 1.36741</point>
+              <point>-19.9766 0.912795</point>
+              <point>-19.9935 0.457203</point>
+              <point>-20 0.000805823</point>
+            </polyline>
+          </geometry>
+          <surface>
+            <friction>
+              <ode>
+                <mu>1</mu>
+                <mu2>1</mu2>
+                <fdir1>0 0 0</fdir1>
+                <slip1>0</slip1>
+                <slip2>0</slip2>
+              </ode>
+              <torsional>
+                <coefficient>1</coefficient>
+                <patch_radius>0</patch_radius>
+                <surface_radius>0</surface_radius>
+                <use_patch_radius>1</use_patch_radius>
+                <ode>
+                  <slip>0</slip>
+                </ode>
+              </torsional>
+            </friction>
+            <bounce>
+              <restitution_coefficient>0</restitution_coefficient>
+              <threshold>1e+06</threshold>
+            </bounce>
+            <contact>
+              <collide_without_contact>0</collide_without_contact>
+              <collide_without_contact_bitmask>1</collide_without_contact_bitmask>
+              <collide_bitmask>1</collide_bitmask>
+              <ode>
+                <soft_cfm>0</soft_cfm>
+                <soft_erp>0.2</soft_erp>
+                <kp>1e+13</kp>
+                <kd>1</kd>
+                <max_vel>0.01</max_vel>
+                <min_depth>0</min_depth>
+              </ode>
+              <bullet>
+                <split_impulse>1</split_impulse>
+                <split_impulse_penetration_threshold>-0.01</split_impulse_penetration_threshold>
+                <soft_cfm>0</soft_cfm>
+                <soft_erp>0.2</soft_erp>
+                <kp>1e+13</kp>
+                <kd>1</kd>
+              </bullet>
+            </contact>
+          </surface>
+        </collision>
+      </link>
+      <allow_auto_disable>1</allow_auto_disable>
+    </model>
+    <model name='Testoval'>
+      <static>1</static>
+      <link name='Testoval::link_4'>
+        <inertial>
+          <mass>1</mass>
+          <inertia>
+            <ixx>0.166667</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>0.166667</iyy>
+            <iyz>0</iyz>
+            <izz>0.166667</izz>
+          </inertia>
+          <pose frame=''>0 0 0 0 -0 0</pose>
+        </inertial>
+        <pose frame=''>0 0 0 0 -0 1.5708</pose>
+        <gravity>1</gravity>
+        <self_collide>0</self_collide>
+        <kinematic>0</kinematic>
+        <enable_wind>0</enable_wind>
+        <visual name='visual'>
+          <pose frame=''>0 0 0 0 -0 0</pose>
+          <geometry>
+            <polyline>
+              <height>0.1</height>
+              <point>-28.2223 -56.4446</point>
+              <point>28.2223 -56.4446</point>
+              <point>28.2223 56.4446</point>
+              <point>-28.2223 56.4446</point>
+              <point>-28.2223 -56.4446</point>
+            </polyline>
+            <polyline>
+              <height>0.1</height>
+              <point>-24.9993 24.998</point>
+              <point>-24.9796 25.9903</point>
+              <point>-24.9209 26.9775</point>
+              <point>-24.8235 27.9586</point>
+              <point>-24.6879 28.9324</point>
+              <point>-24.5145 29.898</point>
+              <point>-24.3038 30.8542</point>
+              <point>-24.0562 31.8001</point>
+              <point>-23.7721 32.7346</point>
+              <point>-23.452 33.6566</point>
+              <point>-23.0964 34.5651</point>
+              <point>-22.7055 35.459</point>
+              <point>-22.2799 36.3373</point>
+              <point>-21.82 37.1989</point>
+              <point>-21.3263 38.0428</point>
+              <point>-20.7991 38.868</point>
+              <point>-20.239 39.6733</point>
+              <point>-19.6463 40.4578</point>
+              <point>-19.0215 41.2204</point>
+              <point>-18.3649 41.96</point>
+              <point>-17.6772 42.6756</point>
+              <point>-16.9616 43.3634</point>
+              <point>-16.222 44.0199</point>
+              <point>-15.4594 44.6448</point>
+              <point>-14.675 45.2375</point>
+              <point>-13.8696 45.7977</point>
+              <point>-13.0445 46.3248</point>
+              <point>-12.2006 46.8186</point>
+              <point>-11.339 47.2785</point>
+              <point>-10.4607 47.7041</point>
+              <point>-9.56683 48.095</point>
+              <point>-8.65838 48.4507</point>
+              <point>-7.73641 48.7708</point>
+              <point>-6.80198 49.0548</point>
+              <point>-5.85613 49.3025</point>
+              <point>-4.89991 49.5132</point>
+              <point>-3.93437 49.6865</point>
+              <point>-2.96056 49.8221</point>
+              <point>-1.97954 49.9195</point>
+              <point>-0.992337 49.9783</point>
+              <point>-1.46278e-05 49.998</point>
+              <point>2.05032 49.9151</point>
+              <point>4.055 49.6708</point>
+              <point>6.00761 49.2714</point>
+              <point>7.9017 48.7234</point>
+              <point>9.73084 48.0333</point>
+              <point>11.4886 47.2075</point>
+              <point>13.1685 46.2524</point>
+              <point>14.7642 45.1744</point>
+              <point>16.2693 43.98</point>
+              <point>17.6772 42.6756</point>
+              <point>18.9815 41.2677</point>
+              <point>20.1759 39.7626</point>
+              <point>21.2538 38.1669</point>
+              <point>22.2089 36.4869</point>
+              <point>23.0347 34.7291</point>
+              <point>23.7248 32.8999</point>
+              <point>24.2727 31.0058</point>
+              <point>24.6721 29.0531</point>
+              <point>24.9164 27.0484</point>
+              <point>24.9993 24.998</point>
+              <point>24.9993 -24.9978</point>
+              <point>24.9993 -24.9978</point>
+              <point>24.9993 -24.9978</point>
+              <point>24.9993 -24.9979</point>
+              <point>24.9993 -24.9979</point>
+              <point>24.9993 -24.9979</point>
+              <point>24.9993 -24.9979</point>
+              <point>24.9993 -24.9979</point>
+              <point>24.9993 -24.9979</point>
+              <point>24.9993 -24.9979</point>
+              <point>24.9993 -24.998</point>
+              <point>24.9796 -25.9903</point>
+              <point>24.9209 -26.9775</point>
+              <point>24.8235 -27.9586</point>
+              <point>24.6879 -28.9324</point>
+              <point>24.5145 -29.898</point>
+              <point>24.3038 -30.8542</point>
+              <point>24.0562 -31.8001</point>
+              <point>23.7721 -32.7346</point>
+              <point>23.452 -33.6566</point>
+              <point>23.0963 -34.5651</point>
+              <point>22.7055 -35.459</point>
+              <point>22.2799 -36.3373</point>
+              <point>21.82 -37.1989</point>
+              <point>21.3263 -38.0428</point>
+              <point>20.7991 -38.868</point>
+              <point>20.239 -39.6733</point>
+              <point>19.6463 -40.4578</point>
+              <point>19.0214 -41.2204</point>
+              <point>18.3649 -41.96</point>
+              <point>17.6772 -42.6756</point>
+              <point>16.9616 -43.3634</point>
+              <point>16.222 -44.0199</point>
+              <point>15.4594 -44.6448</point>
+              <point>14.6749 -45.2375</point>
+              <point>13.8696 -45.7977</point>
+              <point>13.0445 -46.3248</point>
+              <point>12.2006 -46.8186</point>
+              <point>11.339 -47.2785</point>
+              <point>10.4607 -47.7041</point>
+              <point>9.56681 -48.095</point>
+              <point>8.65836 -48.4507</point>
+              <point>7.73639 -48.7708</point>
+              <point>6.80196 -49.0548</point>
+              <point>5.85611 -49.3025</point>
+              <point>4.89989 -49.5132</point>
+              <point>3.93435 -49.6865</point>
+              <point>2.96054 -49.8221</point>
+              <point>1.97952 -49.9195</point>
+              <point>0.992317 -49.9783</point>
+              <point>-5.28996e-06 -49.998</point>
+              <point>-0.992324 -49.9783</point>
+              <point>-1.97952 -49.9195</point>
+              <point>-2.96055 -49.8221</point>
+              <point>-3.93436 -49.6865</point>
+              <point>-4.8999 -49.5132</point>
+              <point>-5.85612 -49.3025</point>
+              <point>-6.80197 -49.0548</point>
+              <point>-7.7364 -48.7708</point>
+              <point>-8.65837 -48.4507</point>
+              <point>-9.56682 -48.095</point>
+              <point>-10.4607 -47.7041</point>
+              <point>-11.339 -47.2785</point>
+              <point>-12.2006 -46.8186</point>
+              <point>-13.0445 -46.3248</point>
+              <point>-13.8696 -45.7977</point>
+              <point>-14.675 -45.2375</point>
+              <point>-15.4594 -44.6448</point>
+              <point>-16.222 -44.0199</point>
+              <point>-16.9616 -43.3634</point>
+              <point>-17.6772 -42.6756</point>
+              <point>-18.3649 -41.96</point>
+              <point>-19.0214 -41.2204</point>
+              <point>-19.6463 -40.4578</point>
+              <point>-20.239 -39.6733</point>
+              <point>-20.7991 -38.868</point>
+              <point>-21.3263 -38.0428</point>
+              <point>-21.82 -37.1989</point>
+              <point>-22.2799 -36.3373</point>
+              <point>-22.7055 -35.459</point>
+              <point>-23.0963 -34.5651</point>
+              <point>-23.452 -33.6566</point>
+              <point>-23.7721 -32.7346</point>
+              <point>-24.0562 -31.8001</point>
+              <point>-24.3038 -30.8542</point>
+              <point>-24.5145 -29.898</point>
+              <point>-24.6879 -28.9324</point>
+              <point>-24.8235 -27.9586</point>
+              <point>-24.9209 -26.9775</point>
+              <point>-24.9796 -25.9903</point>
+              <point>-24.9993 -24.998</point>
+              <point>-24.9993 -24.998</point>
+              <point>-24.9993 -24.9979</point>
+              <point>-24.9993 -24.9979</point>
+              <point>-24.9993 -24.9979</point>
+              <point>-24.9993 -24.9979</point>
+              <point>-24.9993 -24.9979</point>
+              <point>-24.9993 -24.9979</point>
+              <point>-24.9993 -24.9978</point>
+              <point>-24.9993 -24.9978</point>
+              <point>-24.9993 -24.9978</point>
+              <point>-24.9993 24.9978</point>
+              <point>-24.9993 24.9978</point>
+              <point>-24.9993 24.9978</point>
+              <point>-24.9993 24.9979</point>
+              <point>-24.9993 24.9979</point>
+              <point>-24.9993 24.9979</point>
+              <point>-24.9993 24.9979</point>
+              <point>-24.9993 24.9979</point>
+              <point>-24.9993 24.9979</point>
+              <point>-24.9993 24.998</point>
+              <point>-24.9993 24.998</point>
+            </polyline>
+          </geometry>
+          <material>
+            <script>
+              <uri>model://Testoval/materials/scripts</uri>
+              <uri>model://Testoval/materials/textures/</uri>
+              <name>Testoval/Image</name>
+            </script>
+          </material>
+          <transparency>0</transparency>
+          <cast_shadows>1</cast_shadows>
+        </visual>
+        <collision name='collision'>
+          <laser_retro>0</laser_retro>
+          <max_contacts>10</max_contacts>
+          <pose frame=''>0 0 0 0 -0 0</pose>
+          <geometry>
+            <polyline>
+              <height>0.1</height>
+              <point>-28.2223 -56.4446</point>
+              <point>28.2223 -56.4446</point>
+              <point>28.2223 56.4446</point>
+              <point>-28.2223 56.4446</point>
+              <point>-28.2223 -56.4446</point>
+            </polyline>
+            <polyline>
+              <height>0.1</height>
+              <point>-24.9993 24.998</point>
+              <point>-24.9796 25.9903</point>
+              <point>-24.9209 26.9775</point>
+              <point>-24.8235 27.9586</point>
+              <point>-24.6879 28.9324</point>
+              <point>-24.5145 29.898</point>
+              <point>-24.3038 30.8542</point>
+              <point>-24.0562 31.8001</point>
+              <point>-23.7721 32.7346</point>
+              <point>-23.452 33.6566</point>
+              <point>-23.0964 34.5651</point>
+              <point>-22.7055 35.459</point>
+              <point>-22.2799 36.3373</point>
+              <point>-21.82 37.1989</point>
+              <point>-21.3263 38.0428</point>
+              <point>-20.7991 38.868</point>
+              <point>-20.239 39.6733</point>
+              <point>-19.6463 40.4578</point>
+              <point>-19.0215 41.2204</point>
+              <point>-18.3649 41.96</point>
+              <point>-17.6772 42.6756</point>
+              <point>-16.9616 43.3634</point>
+              <point>-16.222 44.0199</point>
+              <point>-15.4594 44.6448</point>
+              <point>-14.675 45.2375</point>
+              <point>-13.8696 45.7977</point>
+              <point>-13.0445 46.3248</point>
+              <point>-12.2006 46.8186</point>
+              <point>-11.339 47.2785</point>
+              <point>-10.4607 47.7041</point>
+              <point>-9.56683 48.095</point>
+              <point>-8.65838 48.4507</point>
+              <point>-7.73641 48.7708</point>
+              <point>-6.80198 49.0548</point>
+              <point>-5.85613 49.3025</point>
+              <point>-4.89991 49.5132</point>
+              <point>-3.93437 49.6865</point>
+              <point>-2.96056 49.8221</point>
+              <point>-1.97954 49.9195</point>
+              <point>-0.992337 49.9783</point>
+              <point>-1.46278e-05 49.998</point>
+              <point>2.05032 49.9151</point>
+              <point>4.055 49.6708</point>
+              <point>6.00761 49.2714</point>
+              <point>7.9017 48.7234</point>
+              <point>9.73084 48.0333</point>
+              <point>11.4886 47.2075</point>
+              <point>13.1685 46.2524</point>
+              <point>14.7642 45.1744</point>
+              <point>16.2693 43.98</point>
+              <point>17.6772 42.6756</point>
+              <point>18.9815 41.2677</point>
+              <point>20.1759 39.7626</point>
+              <point>21.2538 38.1669</point>
+              <point>22.2089 36.4869</point>
+              <point>23.0347 34.7291</point>
+              <point>23.7248 32.8999</point>
+              <point>24.2727 31.0058</point>
+              <point>24.6721 29.0531</point>
+              <point>24.9164 27.0484</point>
+              <point>24.9993 24.998</point>
+              <point>24.9993 -24.9978</point>
+              <point>24.9993 -24.9978</point>
+              <point>24.9993 -24.9978</point>
+              <point>24.9993 -24.9979</point>
+              <point>24.9993 -24.9979</point>
+              <point>24.9993 -24.9979</point>
+              <point>24.9993 -24.9979</point>
+              <point>24.9993 -24.9979</point>
+              <point>24.9993 -24.9979</point>
+              <point>24.9993 -24.9979</point>
+              <point>24.9993 -24.998</point>
+              <point>24.9796 -25.9903</point>
+              <point>24.9209 -26.9775</point>
+              <point>24.8235 -27.9586</point>
+              <point>24.6879 -28.9324</point>
+              <point>24.5145 -29.898</point>
+              <point>24.3038 -30.8542</point>
+              <point>24.0562 -31.8001</point>
+              <point>23.7721 -32.7346</point>
+              <point>23.452 -33.6566</point>
+              <point>23.0963 -34.5651</point>
+              <point>22.7055 -35.459</point>
+              <point>22.2799 -36.3373</point>
+              <point>21.82 -37.1989</point>
+              <point>21.3263 -38.0428</point>
+              <point>20.7991 -38.868</point>
+              <point>20.239 -39.6733</point>
+              <point>19.6463 -40.4578</point>
+              <point>19.0214 -41.2204</point>
+              <point>18.3649 -41.96</point>
+              <point>17.6772 -42.6756</point>
+              <point>16.9616 -43.3634</point>
+              <point>16.222 -44.0199</point>
+              <point>15.4594 -44.6448</point>
+              <point>14.6749 -45.2375</point>
+              <point>13.8696 -45.7977</point>
+              <point>13.0445 -46.3248</point>
+              <point>12.2006 -46.8186</point>
+              <point>11.339 -47.2785</point>
+              <point>10.4607 -47.7041</point>
+              <point>9.56681 -48.095</point>
+              <point>8.65836 -48.4507</point>
+              <point>7.73639 -48.7708</point>
+              <point>6.80196 -49.0548</point>
+              <point>5.85611 -49.3025</point>
+              <point>4.89989 -49.5132</point>
+              <point>3.93435 -49.6865</point>
+              <point>2.96054 -49.8221</point>
+              <point>1.97952 -49.9195</point>
+              <point>0.992317 -49.9783</point>
+              <point>-5.28996e-06 -49.998</point>
+              <point>-0.992324 -49.9783</point>
+              <point>-1.97952 -49.9195</point>
+              <point>-2.96055 -49.8221</point>
+              <point>-3.93436 -49.6865</point>
+              <point>-4.8999 -49.5132</point>
+              <point>-5.85612 -49.3025</point>
+              <point>-6.80197 -49.0548</point>
+              <point>-7.7364 -48.7708</point>
+              <point>-8.65837 -48.4507</point>
+              <point>-9.56682 -48.095</point>
+              <point>-10.4607 -47.7041</point>
+              <point>-11.339 -47.2785</point>
+              <point>-12.2006 -46.8186</point>
+              <point>-13.0445 -46.3248</point>
+              <point>-13.8696 -45.7977</point>
+              <point>-14.675 -45.2375</point>
+              <point>-15.4594 -44.6448</point>
+              <point>-16.222 -44.0199</point>
+              <point>-16.9616 -43.3634</point>
+              <point>-17.6772 -42.6756</point>
+              <point>-18.3649 -41.96</point>
+              <point>-19.0214 -41.2204</point>
+              <point>-19.6463 -40.4578</point>
+              <point>-20.239 -39.6733</point>
+              <point>-20.7991 -38.868</point>
+              <point>-21.3263 -38.0428</point>
+              <point>-21.82 -37.1989</point>
+              <point>-22.2799 -36.3373</point>
+              <point>-22.7055 -35.459</point>
+              <point>-23.0963 -34.5651</point>
+              <point>-23.452 -33.6566</point>
+              <point>-23.7721 -32.7346</point>
+              <point>-24.0562 -31.8001</point>
+              <point>-24.3038 -30.8542</point>
+              <point>-24.5145 -29.898</point>
+              <point>-24.6879 -28.9324</point>
+              <point>-24.8235 -27.9586</point>
+              <point>-24.9209 -26.9775</point>
+              <point>-24.9796 -25.9903</point>
+              <point>-24.9993 -24.998</point>
+              <point>-24.9993 -24.998</point>
+              <point>-24.9993 -24.9979</point>
+              <point>-24.9993 -24.9979</point>
+              <point>-24.9993 -24.9979</point>
+              <point>-24.9993 -24.9979</point>
+              <point>-24.9993 -24.9979</point>
+              <point>-24.9993 -24.9979</point>
+              <point>-24.9993 -24.9978</point>
+              <point>-24.9993 -24.9978</point>
+              <point>-24.9993 -24.9978</point>
+              <point>-24.9993 24.9978</point>
+              <point>-24.9993 24.9978</point>
+              <point>-24.9993 24.9978</point>
+              <point>-24.9993 24.9979</point>
+              <point>-24.9993 24.9979</point>
+              <point>-24.9993 24.9979</point>
+              <point>-24.9993 24.9979</point>
+              <point>-24.9993 24.9979</point>
+              <point>-24.9993 24.9979</point>
+              <point>-24.9993 24.998</point>
+              <point>-24.9993 24.998</point>
+            </polyline>
+          </geometry>
+          <surface>
+            <friction>
+              <ode>
+                <mu>1</mu>
+                <mu2>1</mu2>
+                <fdir1>0 0 0</fdir1>
+                <slip1>0</slip1>
+                <slip2>0</slip2>
+              </ode>
+              <torsional>
+                <coefficient>1</coefficient>
+                <patch_radius>0</patch_radius>
+                <surface_radius>0</surface_radius>
+                <use_patch_radius>1</use_patch_radius>
+                <ode>
+                  <slip>0</slip>
+                </ode>
+              </torsional>
+            </friction>
+            <bounce>
+              <restitution_coefficient>0</restitution_coefficient>
+              <threshold>1e+06</threshold>
+            </bounce>
+            <contact>
+              <collide_without_contact>0</collide_without_contact>
+              <collide_without_contact_bitmask>1</collide_without_contact_bitmask>
+              <collide_bitmask>1</collide_bitmask>
+              <ode>
+                <soft_cfm>0</soft_cfm>
+                <soft_erp>0.2</soft_erp>
+                <kp>1e+13</kp>
+                <kd>1</kd>
+                <max_vel>0.01</max_vel>
+                <min_depth>0</min_depth>
+              </ode>
+              <bullet>
+                <split_impulse>1</split_impulse>
+                <split_impulse_penetration_threshold>-0.01</split_impulse_penetration_threshold>
+                <soft_cfm>0</soft_cfm>
+                <soft_erp>0.2</soft_erp>
+                <kp>1e+13</kp>
+                <kd>1</kd>
+              </bullet>
+            </contact>
+          </surface>
+        </collision>
+      </link>
+      <allow_auto_disable>1</allow_auto_disable>
+    </model>
+    <physics name='default_physics' default='0' type='ode'>
+      <max_step_size>0.001</max_step_size>
+      <real_time_factor>1</real_time_factor>
+      <real_time_update_rate>10000</real_time_update_rate>
+      <ode>
+        <solver>
+          <type>quick</type>
+          <iters>1000</iters>
+          <sor>1.3</sor>
+          <use_dynamic_moi_rescaling>0</use_dynamic_moi_rescaling>
+        </solver>
+        <constraints>
+          <cfm>0</cfm>
+          <erp>0.2</erp>
+          <contact_max_correcting_vel>100</contact_max_correcting_vel>
+          <contact_surface_layer>0.001</contact_surface_layer>
+        </constraints>
+      </ode>
+    </physics>
+    <gravity>0 0 -9.8</gravity>
+    <magnetic_field>6e-06 2.3e-05 -4.2e-05</magnetic_field>
+    <atmosphere type='adiabatic'/>
+    <wind/>
+    <spherical_coordinates>
+      <surface_model>EARTH_WGS84</surface_model>
+      <latitude_deg>0</latitude_deg>
+      <longitude_deg>0</longitude_deg>
+      <elevation>0</elevation>
+      <heading_deg>0</heading_deg>
+    </spherical_coordinates>
+    <model name='Construction Cone'>
+      <link name='link'>
+        <collision name='collision'>
+          <geometry>
+            <mesh>
+              <scale>10 10 10</scale>
+              <uri>model://construction_cone/meshes/construction_cone.dae</uri>
+            </mesh>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='visual'>
+          <geometry>
+            <mesh>
+              <scale>10 10 10</scale>
+              <uri>model://construction_cone/meshes/construction_cone.dae</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <self_collide>0</self_collide>
+        <inertial>
+          <pose frame=''>0 0 0 0 -0 0</pose>
+          <inertia>
+            <ixx>1</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>1</iyy>
+            <iyz>0</iyz>
+            <izz>1</izz>
+          </inertia>
+          <mass>1</mass>
+        </inertial>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <pose frame=''>2.97473 10.0543 0 0 -0 0</pose>
+    </model>
+    <model name='Construction Cone_0'>
+      <link name='link'>
+        <collision name='collision'>
+          <geometry>
+            <mesh>
+              <scale>10 10 10</scale>
+              <uri>model://construction_cone/meshes/construction_cone.dae</uri>
+            </mesh>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='visual'>
+          <geometry>
+            <mesh>
+              <scale>10 10 10</scale>
+              <uri>model://construction_cone/meshes/construction_cone.dae</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <self_collide>0</self_collide>
+        <inertial>
+          <pose frame=''>0 0 0 0 -0 0</pose>
+          <inertia>
+            <ixx>1</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>1</iyy>
+            <iyz>0</iyz>
+            <izz>1</izz>
+          </inertia>
+          <mass>1</mass>
+        </inertial>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <pose frame=''>-0.969579 10.0826 0 0 -0 0</pose>
+    </model>
+    <model name='Construction Cone_1'>
+      <link name='link'>
+        <collision name='collision'>
+          <geometry>
+            <mesh>
+              <scale>10 10 10</scale>
+              <uri>model://construction_cone/meshes/construction_cone.dae</uri>
+            </mesh>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='visual'>
+          <geometry>
+            <mesh>
+              <scale>10 10 10</scale>
+              <uri>model://construction_cone/meshes/construction_cone.dae</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <self_collide>0</self_collide>
+        <inertial>
+          <pose frame=''>0 0 0 0 -0 0</pose>
+          <inertia>
+            <ixx>1</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>1</iyy>
+            <iyz>0</iyz>
+            <izz>1</izz>
+          </inertia>
+          <mass>1</mass>
+        </inertial>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <pose frame=''>3.06048 7.99624 0 0 -0 0</pose>
+    </model>
+    <model name='Construction Cone_2'>
+      <link name='link'>
+        <collision name='collision'>
+          <geometry>
+            <mesh>
+              <scale>10 10 10</scale>
+              <uri>model://construction_cone/meshes/construction_cone.dae</uri>
+            </mesh>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='visual'>
+          <geometry>
+            <mesh>
+              <scale>10 10 10</scale>
+              <uri>model://construction_cone/meshes/construction_cone.dae</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <self_collide>0</self_collide>
+        <inertial>
+          <pose frame=''>0 0 0 0 -0 0</pose>
+          <inertia>
+            <ixx>1</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>1</iyy>
+            <iyz>0</iyz>
+            <izz>1</izz>
+          </inertia>
+          <mass>1</mass>
+        </inertial>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <pose frame=''>-0.912413 7.9391 0 0 -0 0</pose>
+    </model>
+    <model name='Construction Cone_3'>
+      <link name='link'>
+        <collision name='collision'>
+          <geometry>
+            <mesh>
+              <scale>10 10 10</scale>
+              <uri>model://construction_cone/meshes/construction_cone.dae</uri>
+            </mesh>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='visual'>
+          <geometry>
+            <mesh>
+              <scale>10 10 10</scale>
+              <uri>model://construction_cone/meshes/construction_cone.dae</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <self_collide>0</self_collide>
+        <inertial>
+          <pose frame=''>0 0 0 0 -0 0</pose>
+          <inertia>
+            <ixx>1</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>1</iyy>
+            <iyz>0</iyz>
+            <izz>1</izz>
+          </inertia>
+          <mass>1</mass>
+        </inertial>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <pose frame=''>-0.998161 5.96704 0 0 -0 0</pose>
+    </model>
+    <model name='Construction Cone_4'>
+      <link name='link'>
+        <collision name='collision'>
+          <geometry>
+            <mesh>
+              <scale>10 10 10</scale>
+              <uri>model://construction_cone/meshes/construction_cone.dae</uri>
+            </mesh>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='visual'>
+          <geometry>
+            <mesh>
+              <scale>10 10 10</scale>
+              <uri>model://construction_cone/meshes/construction_cone.dae</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <self_collide>0</self_collide>
+        <inertial>
+          <pose frame=''>0 0 0 0 -0 0</pose>
+          <inertia>
+            <ixx>1</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>1</iyy>
+            <iyz>0</iyz>
+            <izz>1</izz>
+          </inertia>
+          <mass>1</mass>
+        </inertial>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <pose frame=''>-0.998161 3.96632 0 0 -0 0</pose>
+    </model>
+    <model name='Construction Cone_5'>
+      <link name='link'>
+        <collision name='collision'>
+          <geometry>
+            <mesh>
+              <scale>10 10 10</scale>
+              <uri>model://construction_cone/meshes/construction_cone.dae</uri>
+            </mesh>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='visual'>
+          <geometry>
+            <mesh>
+              <scale>10 10 10</scale>
+              <uri>model://construction_cone/meshes/construction_cone.dae</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <self_collide>0</self_collide>
+        <inertial>
+          <pose frame=''>0 0 0 0 -0 0</pose>
+          <inertia>
+            <ixx>1</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>1</iyy>
+            <iyz>0</iyz>
+            <izz>1</izz>
+          </inertia>
+          <mass>1</mass>
+        </inertial>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <pose frame=''>-0.998161 1.90845 0 0 -0 0</pose>
+    </model>
+    <model name='Construction Cone_6'>
+      <link name='link'>
+        <collision name='collision'>
+          <geometry>
+            <mesh>
+              <scale>10 10 10</scale>
+              <uri>model://construction_cone/meshes/construction_cone.dae</uri>
+            </mesh>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='visual'>
+          <geometry>
+            <mesh>
+              <scale>10 10 10</scale>
+              <uri>model://construction_cone/meshes/construction_cone.dae</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <self_collide>0</self_collide>
+        <inertial>
+          <pose frame=''>0 0 0 0 -0 0</pose>
+          <inertia>
+            <ixx>1</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>1</iyy>
+            <iyz>0</iyz>
+            <izz>1</izz>
+          </inertia>
+          <mass>1</mass>
+        </inertial>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <pose frame=''>3.00331 5.99552 0 0 -0 0</pose>
+    </model>
+    <model name='Construction Cone_7'>
+      <link name='link'>
+        <collision name='collision'>
+          <geometry>
+            <mesh>
+              <scale>10 10 10</scale>
+              <uri>model://construction_cone/meshes/construction_cone.dae</uri>
+            </mesh>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='visual'>
+          <geometry>
+            <mesh>
+              <scale>10 10 10</scale>
+              <uri>model://construction_cone/meshes/construction_cone.dae</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <self_collide>0</self_collide>
+        <inertial>
+          <pose frame=''>0 0 0 0 -0 0</pose>
+          <inertia>
+            <ixx>1</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>1</iyy>
+            <iyz>0</iyz>
+            <izz>1</izz>
+          </inertia>
+          <mass>1</mass>
+        </inertial>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <pose frame=''>3.06048 3.96632 0 0 -0 0</pose>
+    </model>
+    <model name='Construction Cone_8'>
+      <link name='link'>
+        <collision name='collision'>
+          <geometry>
+            <mesh>
+              <scale>10 10 10</scale>
+              <uri>model://construction_cone/meshes/construction_cone.dae</uri>
+            </mesh>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='visual'>
+          <geometry>
+            <mesh>
+              <scale>10 10 10</scale>
+              <uri>model://construction_cone/meshes/construction_cone.dae</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <self_collide>0</self_collide>
+        <inertial>
+          <pose frame=''>0 0 0 0 -0 0</pose>
+          <inertia>
+            <ixx>1</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>1</iyy>
+            <iyz>0</iyz>
+            <izz>1</izz>
+          </inertia>
+          <mass>1</mass>
+        </inertial>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <pose frame=''>3.03191 2.05121 0 0 -0 0</pose>
+    </model>
+    <state world_name='default'>
+      <sim_time>4002 942000000</sim_time>
+      <real_time>192 655742805</real_time>
+      <wall_time>1588142919 472122617</wall_time>
+      <iterations>169570</iterations>
+      <model name='Construction Cone'>
+        <pose frame=''>3 10 -0 0 -0 0</pose>
+        <scale>1 1 1</scale>
+        <link name='link'>
+          <pose frame=''>3 10 -0 0 -0 0</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>-0 -0 -9.8 1e-06 1e-06 0</acceleration>
+          <wrench>-0 -0 -9.8 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='Construction Cone_0'>
+        <pose frame=''>-1 10 -0 0 -0 0</pose>
+        <scale>1 1 1</scale>
+        <link name='link'>
+          <pose frame=''>-1 10 -0 0 -0 0</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>-0 -0 -9.8 1e-06 1e-06 0</acceleration>
+          <wrench>-0 -0 -9.8 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='Construction Cone_1'>
+        <pose frame=''>3 8 -0 2e-06 -0 0</pose>
+        <scale>1 1 1</scale>
+        <link name='link'>
+          <pose frame=''>3 8 -0 2e-06 -0 0</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 -0 -0.431817 1.975 0.380746 0</acceleration>
+          <wrench>0 -0 -0.431817 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='Construction Cone_2'>
+        <pose frame=''>-1 8 0 0 -0 0</pose>
+        <scale>1 1 1</scale>
+        <link name='link'>
+          <pose frame=''>-1 8 0 0 -0 0</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 19.5255 -0.994958 0.969726 0</acceleration>
+          <wrench>0 0 19.5255 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='Construction Cone_3'>
+        <pose frame=''>-1 6 0 0 -0 0</pose>
+        <scale>1 1 1</scale>
+        <link name='link'>
+          <pose frame=''>-1 6 0 0 -0 0</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>-0 -0 -0.097712 -6.8e-05 -0.574178 0</acceleration>
+          <wrench>-0 -0 -0.097712 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='Construction Cone_4'>
+        <pose frame=''>-1 4 0 0 -0 0</pose>
+        <scale>1 1 1</scale>
+        <link name='link'>
+          <pose frame=''>-1 4 0 0 -0 0</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 19.5255 -0.994942 0.969718 0</acceleration>
+          <wrench>0 0 19.5255 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='Construction Cone_5'>
+        <pose frame=''>-1 2 0 0 -0 0</pose>
+        <scale>1 1 1</scale>
+        <link name='link'>
+          <pose frame=''>-1 2 0 0 -0 0</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 19.5255 -0.994958 0.969726 0</acceleration>
+          <wrench>0 0 19.5255 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='Construction Cone_6'>
+        <pose frame=''>3 6 -0 2e-06 -0 0</pose>
+        <scale>1 1 1</scale>
+        <link name='link'>
+          <pose frame=''>3 6 -0 2e-06 -0 0</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 -0 -0.431817 1.975 0.380746 0</acceleration>
+          <wrench>0 -0 -0.431817 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='Construction Cone_7'>
+        <pose frame=''>3 4 -0 0 -1e-06 0</pose>
+        <scale>1 1 1</scale>
+        <link name='link'>
+          <pose frame=''>3 4 -0 0 -1e-06 0</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>-0 -0 0.005822 -2.81256 -1.47284 -3.14159</acceleration>
+          <wrench>-0 -0 0.005822 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='Construction Cone_8'>
+        <pose frame=''>3 2 -0 0 -1e-06 0</pose>
+        <scale>1 1 1</scale>
+        <link name='link'>
+          <pose frame=''>3 2 -0 0 -1e-06 0</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>-0 -0 0.005822 -2.81256 -1.47284 -3.14159</acceleration>
+          <wrench>-0 -0 0.005822 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='Testoval'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <scale>1 1 1</scale>
+        <link name='Testoval::link_4'>
+          <pose frame=''>0 0 0 0 -0 1.5708</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='Testoval_Inseln'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <scale>1 1 1</scale>
+        <link name='Mittelinseln::link_12'>
+          <pose frame=''>25 0 0 0 0 -1.5708</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+        <link name='Mittelinseln::link_13'>
+          <pose frame=''>-25 -0.020217 0 0 0 -1.5708</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='feldschwarm_robot'>
+        <pose frame=''>1.00565 -1.09315 0 0 -0 1.59981</pose>
+        <scale>1 1 1</scale>
+        <link name='base_footprint'>
+          <pose frame=''>1.00565 -1.09315 0 0 -0 1.59981</pose>
+          <velocity>0 -0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+        <link name='front_left_wheel_link'>
+          <pose frame=''>0.485557 -0.407945 0.2 0 -0 1.59981</pose>
+          <velocity>0 -0 0 0 -0 0</velocity>
+          <acceleration>-0 0 -0 0 -0 0</acceleration>
+          <wrench>-0 0 -0 0 -0 0</wrench>
+        </link>
+        <link name='front_right_wheel_link'>
+          <pose frame=''>1.48514 -0.378938 0.2 0 -0 1.59981</pose>
+          <velocity>0 -0 0 0 -0 0</velocity>
+          <acceleration>-0 -0 0 0 -0 0</acceleration>
+          <wrench>-0 -0 0 0 -0 0</wrench>
+        </link>
+        <link name='rear_left_wheel_link'>
+          <pose frame=''>0.526167 -1.80736 0.2 0 -0 1.59981</pose>
+          <velocity>0 -0 0 0 -0 0</velocity>
+          <acceleration>-0 -0 0 0 -0 0</acceleration>
+          <wrench>-0 -0 0 0 -0 0</wrench>
+        </link>
+        <link name='rear_right_wheel_link'>
+          <pose frame=''>1.52575 -1.77835 0.2 0 -0 1.59981</pose>
+          <velocity>0 -0 0 0 -0 0</velocity>
+          <acceleration>-0 -0 -0 0 -0 0</acceleration>
+          <wrench>-0 -0 -0 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='my_ground_plane'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <scale>1 1 1</scale>
+        <link name='link'>
+          <pose frame=''>0 0 0 0 -0 0</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+      </model>
+      <light name='sun'>
+        <pose frame=''>0 0 10 0 -0 0</pose>
+      </light>
+    </state>
+    <gui fullscreen='0'>
+      <camera name='user_camera'>
+        <pose frame=''>13.5667 -4.57831 5.72783 0 0.275643 2.3562</pose>
+        <view_controller>orbit</view_controller>
+        <projection_type>perspective</projection_type>
+      </camera>
+    </gui>
+    <model name='feldschwarm_robot'>
+      <link name='base_footprint'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <inertial>
+          <pose frame=''>0 0 0.434554 0 -0 0</pose>
+          <mass>2.84</mass>
+          <inertia>
+            <ixx>0.406751</ixx>
+            <ixy>0</ixy>
+            <ixz>0.145833</ixz>
+            <iyy>0.260918</iyy>
+            <iyz>0</iyz>
+            <izz>0.292772</izz>
+          </inertia>
+        </inertial>
+        <collision name='base_footprint_fixed_joint_lump__robot_chasiss_collision'>
+          <pose frame=''>0 0 0.2 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>1.5 1 0.4</size>
+            </box>
+          </geometry>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <friction>
+              <ode/>
+              <torsional>
+                <ode/>
+              </torsional>
+            </friction>
+            <bounce/>
+          </surface>
+          <max_contacts>10</max_contacts>
+        </collision>
+        <collision name='base_footprint_fixed_joint_lump__lidar_stand_collision_1'>
+          <pose frame=''>0 0 0.5 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>0.1 0.1 0.2</size>
+            </box>
+          </geometry>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <friction>
+              <ode/>
+              <torsional>
+                <ode/>
+              </torsional>
+            </friction>
+            <bounce/>
+          </surface>
+          <max_contacts>10</max_contacts>
+        </collision>
+        <collision name='base_footprint_fixed_joint_lump__velodyne_base_link_collision_2'>
+          <pose frame=''>0 0 0.63585 0 -0 0</pose>
+          <geometry>
+            <cylinder>
+              <length>0.0717</length>
+              <radius>0.0516</radius>
+            </cylinder>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='base_footprint_fixed_joint_lump__robot_chasiss_visual'>
+          <pose frame=''>0 0 0.2 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>1.5 1 0.4</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <name>Gazebo/Blue</name>
+              <uri>file://media/materials/scripts/gazebo.material</uri>
+            </script>
+          </material>
+        </visual>
+        <visual name='base_footprint_fixed_joint_lump__lidar_stand_visual_1'>
+          <pose frame=''>0 0 0.5 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>0.1 0.1 0.2</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <name>Gazebo/Black</name>
+              <uri>file://media/materials/scripts/gazebo.material</uri>
+            </script>
+          </material>
+        </visual>
+        <visual name='base_footprint_fixed_joint_lump__velodyne_base_link_visual_2'>
+          <pose frame=''>0 0 0.6 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>1 1 1</scale>
+              <uri>/home/arman/z_ws/src/velodyne_simulator/velodyne_description/meshes/VLP16_base_1.dae</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <visual name='base_footprint_fixed_joint_lump__velodyne_base_link_visual_3'>
+          <pose frame=''>0 0 0.6 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>1 1 1</scale>
+              <uri>/home/arman/z_ws/src/velodyne_simulator/velodyne_description/meshes/VLP16_base_2.dae</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <visual name='base_footprint_fixed_joint_lump__velodyne_visual_4'>
+          <pose frame=''>0 0 0.6 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>1 1 1</scale>
+              <uri>/home/arman/z_ws/src/velodyne_simulator/velodyne_description/meshes/VLP16_scan.dae</uri>
+            </mesh>
+          </geometry>
+          <material>
+            <script>
+              <uri>__default__</uri>
+              <name>__default__</name>
+            </script>
+          </material>
+        </visual>
+        <velocity_decay/>
+        <velocity_decay/>
+        <gravity>1</gravity>
+        <velocity_decay/>
+        <sensor name='velodyne-VLP16' type='ray'>
+          <visualize>0</visualize>
+          <update_rate>10</update_rate>
+          <ray>
+            <scan>
+              <horizontal>
+                <samples>1024</samples>
+                <resolution>1</resolution>
+                <min_angle>-3.14159</min_angle>
+                <max_angle>3.14159</max_angle>
+              </horizontal>
+              <vertical>
+                <samples>16</samples>
+                <resolution>1</resolution>
+                <min_angle>-0.261799</min_angle>
+                <max_angle>0.261799</max_angle>
+              </vertical>
+            </scan>
+            <range>
+              <min>0.3</min>
+              <max>101</max>
+              <resolution>0.001</resolution>
+            </range>
+            <noise>
+              <type>gaussian</type>
+              <mean>0</mean>
+              <stddev>0</stddev>
+            </noise>
+          </ray>
+          <plugin name='gazebo_ros_laser_controller' filename='libgazebo_ros_velodyne_laser.so'>
+            <topicName>/velodyne_points</topicName>
+            <frameName>velodyne</frameName>
+            <min_range>0.9</min_range>
+            <max_range>100</max_range>
+            <gaussianNoise>0.008</gaussianNoise>
+            <robotNamespace>/</robotNamespace>
+          </plugin>
+          <pose frame=''>0 0 0.6377 0 -0 0</pose>
+        </sensor>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <link name='front_left_wheel_link'>
+        <pose frame=''>0.7 0.5 0.2 0 -0 0</pose>
+        <inertial>
+          <pose frame=''>0 0 0 0 -0 0</pose>
+          <mass>1</mass>
+          <inertia>
+            <ixx>0.145833</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>0.145833</iyy>
+            <iyz>0</iyz>
+            <izz>0.125</izz>
+          </inertia>
+        </inertial>
+        <collision name='front_left_wheel_link_fixed_joint_lump__Robot_1.0__collision_collision'>
+          <pose frame=''>0 0 0 1.5708 -0 0</pose>
+          <geometry>
+            <cylinder>
+              <length>0.025</length>
+              <radius>0.2</radius>
+            </cylinder>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='front_left_wheel_link_fixed_joint_lump__Robot_1.0__visual_visual'>
+          <pose frame=''>0 0 0 1.5708 -0 0</pose>
+          <geometry>
+            <cylinder>
+              <length>0.025</length>
+              <radius>0.2</radius>
+            </cylinder>
+          </geometry>
+        </visual>
+        <gravity>1</gravity>
+        <velocity_decay/>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <joint name='front_left_wheel' type='revolute'>
+        <child>front_left_wheel_link</child>
+        <parent>base_footprint</parent>
+        <axis>
+          <xyz>0 1 0</xyz>
+          <limit>
+            <lower>-1e+16</lower>
+            <upper>1e+16</upper>
+          </limit>
+          <dynamics>
+            <spring_reference>0</spring_reference>
+            <spring_stiffness>0</spring_stiffness>
+          </dynamics>
+          <use_parent_model_frame>1</use_parent_model_frame>
+        </axis>
+      </joint>
+      <link name='front_right_wheel_link'>
+        <pose frame=''>0.7 -0.5 0.2 0 -0 0</pose>
+        <inertial>
+          <pose frame=''>0 0 0 0 -0 0</pose>
+          <mass>1</mass>
+          <inertia>
+            <ixx>0.145833</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>0.145833</iyy>
+            <iyz>0</iyz>
+            <izz>0.125</izz>
+          </inertia>
+        </inertial>
+        <collision name='front_right_wheel_link_fixed_joint_lump__Robot_1.0__collision_collision'>
+          <pose frame=''>0 0 0 1.5708 -0 0</pose>
+          <geometry>
+            <cylinder>
+              <length>0.025</length>
+              <radius>0.2</radius>
+            </cylinder>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='front_right_wheel_link_fixed_joint_lump__Robot_1.0__visual_visual'>
+          <pose frame=''>0 0 0 1.5708 -0 0</pose>
+          <geometry>
+            <cylinder>
+              <length>0.025</length>
+              <radius>0.2</radius>
+            </cylinder>
+          </geometry>
+        </visual>
+        <gravity>1</gravity>
+        <velocity_decay/>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <joint name='front_right_wheel' type='revolute'>
+        <child>front_right_wheel_link</child>
+        <parent>base_footprint</parent>
+        <axis>
+          <xyz>0 1 0</xyz>
+          <limit>
+            <lower>-1e+16</lower>
+            <upper>1e+16</upper>
+          </limit>
+          <dynamics>
+            <spring_reference>0</spring_reference>
+            <spring_stiffness>0</spring_stiffness>
+          </dynamics>
+          <use_parent_model_frame>1</use_parent_model_frame>
+        </axis>
+      </joint>
+      <link name='rear_left_wheel_link'>
+        <pose frame=''>-0.7 0.5 0.2 0 -0 0</pose>
+        <inertial>
+          <pose frame=''>0 0 0 0 -0 0</pose>
+          <mass>1</mass>
+          <inertia>
+            <ixx>0.145833</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>0.145833</iyy>
+            <iyz>0</iyz>
+            <izz>0.125</izz>
+          </inertia>
+        </inertial>
+        <collision name='rear_left_wheel_link_fixed_joint_lump__Robot_1.0__collision_collision'>
+          <pose frame=''>0 0 0 1.5708 -0 0</pose>
+          <geometry>
+            <cylinder>
+              <length>0.025</length>
+              <radius>0.2</radius>
+            </cylinder>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='rear_left_wheel_link_fixed_joint_lump__Robot_1.0__visual_visual'>
+          <pose frame=''>0 0 0 1.5708 -0 0</pose>
+          <geometry>
+            <cylinder>
+              <length>0.025</length>
+              <radius>0.2</radius>
+            </cylinder>
+          </geometry>
+        </visual>
+        <gravity>1</gravity>
+        <velocity_decay/>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <joint name='rear_left_wheel' type='revolute'>
+        <child>rear_left_wheel_link</child>
+        <parent>base_footprint</parent>
+        <axis>
+          <xyz>0 1 0</xyz>
+          <limit>
+            <lower>-1e+16</lower>
+            <upper>1e+16</upper>
+          </limit>
+          <dynamics>
+            <spring_reference>0</spring_reference>
+            <spring_stiffness>0</spring_stiffness>
+          </dynamics>
+          <use_parent_model_frame>1</use_parent_model_frame>
+        </axis>
+      </joint>
+      <link name='rear_right_wheel_link'>
+        <pose frame=''>-0.7 -0.5 0.2 0 -0 0</pose>
+        <inertial>
+          <pose frame=''>0 0 0 0 -0 0</pose>
+          <mass>1</mass>
+          <inertia>
+            <ixx>0.145833</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>0.145833</iyy>
+            <iyz>0</iyz>
+            <izz>0.125</izz>
+          </inertia>
+        </inertial>
+        <collision name='rear_right_wheel_link_fixed_joint_lump__Robot_1.0__collision_collision'>
+          <pose frame=''>0 0 0 1.5708 -0 0</pose>
+          <geometry>
+            <cylinder>
+              <length>0.025</length>
+              <radius>0.2</radius>
+            </cylinder>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='rear_right_wheel_link_fixed_joint_lump__Robot_1.0__visual_visual'>
+          <pose frame=''>0 0 0 1.5708 -0 0</pose>
+          <geometry>
+            <cylinder>
+              <length>0.025</length>
+              <radius>0.2</radius>
+            </cylinder>
+          </geometry>
+        </visual>
+        <gravity>1</gravity>
+        <velocity_decay/>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <joint name='rear_right_wheel' type='revolute'>
+        <child>rear_right_wheel_link</child>
+        <parent>base_footprint</parent>
+        <axis>
+          <xyz>0 1 0</xyz>
+          <limit>
+            <lower>-1e+16</lower>
+            <upper>1e+16</upper>
+          </limit>
+          <dynamics>
+            <spring_reference>0</spring_reference>
+            <spring_stiffness>0</spring_stiffness>
+          </dynamics>
+          <use_parent_model_frame>1</use_parent_model_frame>
+        </axis>
+      </joint>
+      <pose frame=''>0 0 0 0 -0 0</pose>
+    </model>
+  </world>
+</sdf>
