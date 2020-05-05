@@ -1,0 +1,14 @@
+<launch>
+
+
+  <include file="$(find feldschwarm_robot_devel)/launch/scenario_1.launch" />
+  <!--include file="$(find lego_loam)/launch/run.launch" /-->
+
+  <!--- LeGO-LOAM -->
+  <node pkg="lego_loam" type="imageProjection"    name="imageProjection"    output="screen"/>
+  <node pkg="lego_loam" type="featureAssociation" name="featureAssociation" output="screen"/>
+  <node pkg="lego_loam" type="mapOptmization"     name="mapOptmization"     output="screen"/>
+  <node pkg="lego_loam" type="transformFusion"    name="transformFusion"    output="screen"/>
+
+
+</launch>

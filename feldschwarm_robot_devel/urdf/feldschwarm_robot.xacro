@@ -1,0 +1,300 @@
+<?xml version='1.0'?>
+
+<robot name="feldschwarm_robot" xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+  <xacro:include filename="$(find feldschwarm_robot_devel)/urdf/feldschwarm_robot.gazebo.xacro" />
+
+  <xacro:property name="scale" value="1.0" />
+
+  <xacro:property name="mower_width" value="${scale * 1}" />
+  <xacro:property name="mower_length" value="${scale * 1.5}" />
+  <xacro:property name="mower_height" value="${scale * 0.4}" />
+  <xacro:property name="mower_mass" value="${scale * 20}" />
+
+  <xacro:property name="base_x_offset" value="0" />
+
+  <xacro:property name="height_2" value="${mower_height * mower_height}" />
+  <xacro:property name="width_2" value="${mower_width * mower_width}" />
+  <xacro:property name="length_2" value="${mower_length * mower_length}" />
+  <xacro:property name="mower_inertia_xx" value="${mower_mass/12.0 * (height_2 + width_2)}" />
+  <xacro:property name="mower_inertia_yy" value="${mower_mass/12.0 * (height_2 + length_2)}" />
+  <xacro:property name="mower_inertia_zz" value="${mower_mass/12.0 * (width_2 + length_2)}" />
+  <xacro:property name="mower_i_x_pos" value="${base_x_offset}" />
+
+  <xacro:property name="mower_frame_width" value="${mower_width - 2.1 * wheel_length}" />
+  <xacro:property name="mower_frame_length" value="${mower_length*1.2}" />
+  <xacro:property name="mower_frame_height" value="${mower_height/4.0}" />
+
+
+
+  <xacro:property name="wheel_length" value="${scale * 0.1}" />
+  <xacro:property name="wheel_radius" value="${scale * 0.2}" />
+  <xacro:property name="wheel_mass" value="${scale * 1}" />
+  <xacro:property name="wheel_inertia" value="${scale * 1e-3}" />
+  <xacro:property name="wheel_x_offset" value="0.75" />
+  <xacro:property name="wheel_y_offset" value="0.55" />
+
+
+
+  <xacro:property name="laser_width" value="0.1" />
+  <xacro:property name="laser_length" value="0.1" />
+  <xacro:property name="laser_height" value="0.1" />
+  <xacro:property name="laser_x_offset" value="${base_x_offset}" />
+  <xacro:property name="laser_z_offset" value="${hardware_height + 0.025}" />
+
+  <xacro:property name="wheel_kp" value="1000000.0" />
+  <xacro:property name="wheel_kd" value="100.0" />
+  <xacro:property name="wheel_mu1" value="1" />
+  <xacro:property name="wheel_mu2" value="1" />
+  <xacro:property name="wheel_slip1" value="0.5" />
+  <xacro:property name="wheel_slip2" value="0" />
+
+
+  <link name="robot_footprint"></link>
+
+  <joint name="robot_footprint_joint" type="fixed">
+    <origin xyz="0 0 ${wheel_radius}" rpy="0 0 0" />
+    <parent link="robot_footprint" />
+    <child link="chassis" />
+  </joint>
+
+  <link name='chassis'>
+    <inertial>
+      <mass value="${mower_mass}"/>
+      <origin xyz="${mower_i_x_pos} 0 ${mower_i_x_pos}" rpy=" 0 0 0"/>
+      <inertia
+          ixx="${mower_inertia_xx}" ixy="0" ixz="0"
+          iyy="${mower_inertia_yy}" iyz="0"
+          izz="${mower_inertia_zz}" />
+    </inertial>
+
+    <collision>
+      <origin xyz="${base_x_offset} 0 0" rpy=" 0 0 0"/>
+      <geometry>
+        <box size="${mower_length} ${mower_width} ${mower_height}"/>
+      </geometry>
+    </collision>
+    <visual>
+      <origin xyz="${base_x_offset} 0 0" rpy=" 0 0 0"/>
+      <geometry>
+        <box size="${mower_length} ${mower_width} ${mower_height}"/>
+      </geometry>
+    </visual>
+  </link>
+
+
+  <!-- left back wheel -->
+  <joint type="continuous" name="left_back_wheel_hinge">
+    <origin xyz="-${wheel_x_offset} ${wheel_y_offset} 0" rpy="0 0 0"/>
+    <child link="left_back_wheel"/>
+    <parent link="chassis"/>
+    <axis xyz="0 1 0" rpy="0 0 0"/>
+    <limit effort="10000" velocity="1000"/>
+    <joint_properties damping="1.0" friction="1.0"/>
+  </joint>
+
+  <link name="left_back_wheel">
+    <inertial>
+      <mass value="${wheel_mass}"/>
+      <origin xyz="0.0 0 0" rpy=" 0 1.5707 1.5707"/>
+      <inertia
+        ixx="${wheel_inertia}" ixy="0" ixz="0"
+        iyy="${wheel_inertia}" iyz="0"
+        izz="${wheel_inertia}" />
+    </inertial>
+    <collision name="left_back_wheel_collision">
+      <origin xyz="0 0 0" rpy=" 0 1.5707 1.5707"/>
+      <geometry>
+        <cylinder length="${wheel_length}" radius="${wheel_radius}"/>
+      </geometry>
+      <surface>
+        <friction>
+          <fdir1>1 0 0</fdir1>
+          <kp>${wheel_kp}</kp> <!-- kp and kd for rubber -->
+          <kd>${wheel_kd}</kd>
+          <mu>${wheel_mu1}</mu>
+          <mu2>${wheel_mu2}</mu2>
+          <slip1>${wheel_slip1}</slip1>
+          <slip2>${wheel_slip2}</slip2>
+        </friction>
+      </surface>
+    </collision>
+    <visual name="left_back_wheel_visual">
+      <origin xyz="0 0 0" rpy=" 0 1.5707 1.5707"/>
+      <geometry>
+        <cylinder length="${wheel_length}" radius="${wheel_radius}"/>
+      </geometry>
+    </visual>
+  </link>
+
+  <!-- right back wheel -->
+  <joint type="continuous" name="right_back_wheel_hinge">
+    <origin xyz="-${wheel_x_offset} -${wheel_y_offset} 0" rpy="0 0 0"/>
+    <child link="right_back_wheel"/>
+    <parent link="chassis"/>
+    <axis xyz="0 1 0" rpy="0 0 0"/>
+    <limit effort="10000" velocity="1000"/>
+    <joint_properties damping="1.0" friction="1.0"/>
+  </joint>
+
+  <link name="right_back_wheel">
+    <inertial>
+      <mass value="${wheel_mass}"/>
+      <origin xyz="0.0 0 0" rpy=" 0 1.5707 1.5707"/>
+      <inertia
+          ixx="${wheel_inertia}" ixy="0" ixz="0"
+          iyy="${wheel_inertia}" iyz="0"
+          izz="${wheel_inertia}" />
+    </inertial>
+    <collision name="right_back_wheel_collision">
+      <origin xyz="0 0 0" rpy=" 0 1.5707 1.5707"/>
+      <geometry>
+        <cylinder length="${wheel_length}" radius="${wheel_radius}"/>
+      </geometry>
+      <surface>
+        <friction>
+          <fdir1>1 0 0</fdir1>
+          <kp>${wheel_kp}</kp>
+          <kd>${wheel_kd}</kd>
+          <mu>${wheel_mu1}</mu>
+          <mu2>${wheel_mu2}</mu2>
+          <slip1>${wheel_slip1}</slip1>
+          <slip2>${wheel_slip2}</slip2>
+        </friction>
+      </surface>
+    </collision>
+    <visual name="right_back_wheel_visual">
+      <origin xyz="0 0 0" rpy=" 0 1.5707 1.5707"/>
+      <geometry>
+        <cylinder length="${wheel_length}" radius="${wheel_radius}"/>
+      </geometry>
+    </visual>
+  </link>
+
+
+  <joint type="continuous" name="left_front_wheel_hinge">
+    <origin xyz="${wheel_x_offset} ${wheel_y_offset} 0" rpy="0 0 0"/>
+    <child link="left_front_wheel"/>
+    <parent link="chassis"/>
+    <axis xyz="0 1 0" rpy="0 0 0"/>
+    <limit effort="10000" velocity="1000"/>
+    <joint_properties damping="1.0" friction="1.0"/>
+  </joint>
+
+  <link name="left_front_wheel">
+    <inertial>
+      <mass value="${wheel_mass}"/>
+      <origin xyz="0.0 0 0" rpy=" 0 1.5707 1.5707"/>
+      <inertia
+        ixx="${wheel_inertia}" ixy="0" ixz="0"
+        iyy="${wheel_inertia}" iyz="0"
+        izz="${wheel_inertia}" />
+    </inertial>
+    <collision name="left_front_wheel_collision">
+      <origin xyz="0 0 0" rpy=" 0 1.5707 1.5707"/>
+      <geometry>
+        <cylinder length="${wheel_length}" radius="${wheel_radius}"/>
+      </geometry>
+      <surface>
+        <friction>
+          <fdir1>1 0 0</fdir1>
+          <kp>${wheel_kp}</kp> <!-- kp and kd for rubber -->
+          <kd>${wheel_kd}</kd>
+          <mu>${wheel_mu1}</mu>
+          <mu2>${wheel_mu2}</mu2>
+          <slip1>${wheel_slip1}</slip1>
+          <slip2>${wheel_slip2}</slip2>
+        </friction>
+      </surface>
+    </collision>
+    <visual name="left_front_wheel_visual">
+      <origin xyz="0 0 0" rpy=" 0 1.5707 1.5707"/>
+      <geometry>
+        <cylinder length="${wheel_length}" radius="${wheel_radius}"/>
+      </geometry>
+    </visual>
+  </link>
+
+  <!-- right front wheel -->
+  <joint type="continuous" name="right_front_wheel_hinge">
+    <origin xyz="${wheel_x_offset} -${wheel_y_offset} 0" rpy="0 0 0"/>
+    <child link="right_front_wheel"/>
+    <parent link="chassis"/>
+    <axis xyz="0 1 0" rpy="0 0 0"/>
+    <limit effort="10000" velocity="1000"/>
+    <joint_properties damping="1.0" friction="1.0"/>
+  </joint>
+
+  <link name="right_front_wheel">
+    <inertial>
+      <mass value="${wheel_mass}"/>
+      <origin xyz="0.0 0 0" rpy=" 0 1.5707 1.5707"/>
+      <inertia
+          ixx="${wheel_inertia}" ixy="0" ixz="0"
+          iyy="${wheel_inertia}" iyz="0"
+          izz="${wheel_inertia}" />
+    </inertial>
+    <collision name="right_front_wheel_collision">
+      <origin xyz="0 0 0" rpy=" 0 1.5707 1.5707"/>
+      <geometry>
+        <cylinder length="${wheel_length}" radius="${wheel_radius}"/>
+      </geometry>
+      <surface>
+        <friction>
+          <fdir1>1 0 0</fdir1>
+          <kp>${wheel_kp}</kp> <!-- kp and kd for rubber -->
+          <kd>${wheel_kd}</kd>
+          <mu>${wheel_mu1}</mu>
+          <mu2>${wheel_mu2}</mu2>
+          <slip1>${wheel_slip1}</slip1>
+          <slip2>${wheel_slip2}</slip2>
+        </friction>
+      </surface>
+    </collision>
+    <visual name="right_front_wheel_visual">
+      <origin xyz="0 0 0" rpy=" 0 1.5707 1.5707"/>
+      <geometry>
+        <cylinder length="${wheel_length}" radius="${wheel_radius}"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="lidar_stand">
+    <visual>
+      <geometry>
+        <box size="0.1 0.1 0.2" />
+      </geometry>
+        <!--material name="black" /-->
+    </visual>
+    <collision>
+      <geometry>
+        <box size="0.1 0.1 0.2" />
+      </geometry>
+    </collision>
+    <inertial>
+      <mass value="1" />
+      <inertia ixx="0.145833" ixy="0.0" ixz="0.145833" iyy="0.0" iyz="0.0" izz="0.1250"/>
+    </inertial>
+  </link>
+  <joint name="joint_name" type="fixed">
+      <parent link="chassis"/>
+      <child link="lidar_stand"/>
+      <axis xyz="0.0 0.0 1.0"/>
+      <origin xyz="0.0 0.0 0.3"/>
+      <!--limit lower="0.0" upper="0.0" effort="0.0" velocity="0.0"/-->
+      <joint_properties damping="1.0" friction="1.0"/>
+  </joint>
+
+
+
+
+
+
+
+
+
+  <xacro:include filename="$(find velodyne_description)/urdf/VLP-16.urdf.xacro"/>
+  <VLP-16 parent="chassis" name="velodyne" topic="/velodyne_points" hz="10" samples="1024" gpu="false" lasers="16" max_range="100">
+    <origin xyz="0 0 0.4" rpy="0 0 0" />
+  </VLP-16>
+
+</robot>
