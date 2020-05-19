@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<launch>
+
+
+
+   <include file="$(find feldschwarm_robot_devel)/launch/loam_scnr_1.launch"/>
+   <node pkg="feldschwarm_robot_devel" type="odom_transform"    name="odom_transform"    output="screen"/>
+
+   <node pkg="tf2_ros" type="static_transform_publisher" name="transform_broadcaster" args="0 0 1  0 0 1.57   odom camera_init"/>
+    
+   
+
+
+</launch>

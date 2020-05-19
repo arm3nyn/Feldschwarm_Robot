@@ -8,10 +8,15 @@ project(feldschwarm_robot_devel)
 ## if COMPONENTS list like find_package(catkin REQUIRED COMPONENTS xyz)
 ## is used, also find other catkin packages
 find_package(catkin REQUIRED COMPONENTS
-  gazebo_ros
-  roscpp
-  urdf
-  xacro
+geometry_msgs
+gazebo
+roscpp
+rospy
+rviz
+std_msgs
+tf
+urdf
+xacro
 )
 
 ## System dependencies are found with CMake's conventions
@@ -106,7 +111,7 @@ find_package(catkin REQUIRED COMPONENTS
 catkin_package(
 #  INCLUDE_DIRS include
 #  LIBRARIES feldschwarm_robot_devel
-#  CATKIN_DEPENDS gazebo_ros roscpp urdf xacro
+#  CATKIN_DEPENDS geometry_msgs ros_gazebo roscpp rospy rviz std_msgs tf urdf xacro
 #  DEPENDS system_lib
 )
 
@@ -125,11 +130,14 @@ include_directories(
 # add_library(${PROJECT_NAME}
 #   src/${PROJECT_NAME}/feldschwarm_robot_devel.cpp
 # )
-
+#add_executable(feldschwarm_robot_devel src/twist_publish.cpp)
+#target_link_libraries(feldschwarm_robot_devel ${catkin_LIBRARIES})
 ## Add cmake target dependencies of the library
 ## as an example, code may need to be generated before libraries
 ## either from message generation or dynamic reconfigure
 # add_dependencies(${PROJECT_NAME} ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
+add_executable(odom_transform src/odom_transform.cpp)
+target_link_libraries(odom_transform ${catkin_LIBRARIES})
 
 ## Declare a C++ executable
 ## With catkin_make all packages are built within a single CMake context
