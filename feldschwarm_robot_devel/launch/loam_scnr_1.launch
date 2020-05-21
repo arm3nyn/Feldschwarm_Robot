@@ -9,16 +9,17 @@
   <arg name="pitch" default="0"/>
   <arg name="yaw" default="1.57"/>
 
-  <include file="$(find feldschwarm_robot_devel)/launch/robot_description.launch"/>
-  <include file="$(find feldschwarm_robot_devel)/launch/loam.launch" />
-
-
   <arg name="world" default="empty"/>
   <arg name="paused" default="false"/>
   <arg name="use_sim_time" default="true"/>
   <arg name="gui" default="true"/>
   <arg name="headless" default="false"/>
   <arg name="debug" default="false"/>
+
+  
+
+
+  
 
   <include file="$(find gazebo_ros)/launch/empty_world.launch">
     <arg name="world_name" value="$(find feldschwarm_robot_devel)/worlds/scenario_1.world"/>
@@ -28,6 +29,9 @@
     <arg name="headless" value="$(arg headless)"/>
     <arg name="debug" value="$(arg debug)"/>
   </include>
+  
+  <include file="$(find feldschwarm_robot_devel)/launch/robot_description.launch"/>
+  <include file="$(find feldschwarm_robot_devel)/launch/loam.launch" />
 
   <!--spawn a robot in gazebo world-->
   <node name="urdf_spawner" pkg="gazebo_ros" type="spawn_model" respawn="false"
