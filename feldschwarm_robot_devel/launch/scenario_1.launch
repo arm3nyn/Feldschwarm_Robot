@@ -10,7 +10,7 @@
   <arg name="z" default="1.0"/>
   <arg name="roll" default="0"/>
   <arg name="pitch" default="0"/>
-  <arg name="yaw" default="1.57"/>
+  <arg name="yaw" default="0"/>
 
   <arg name="world" default="empty"/>
   <arg name="paused" default="false"/>

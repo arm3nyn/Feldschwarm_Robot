@@ -1,14 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <launch>
-  <!-- Robot pose -->
-  <arg name="x" default="0.0"/>
-  <arg name="y" default="0.0"/>
-  <arg name="z" default="1.0"/>
-  <arg name="roll" default="0"/>
-  <arg name="pitch" default="0"/>
-  <arg name="yaw" default="1.57"/>
-
+  <include file="$(find feldschwarm_robot_devel)/launch/robot_description.launch"/>
+  <include file="$(find feldschwarm_robot_devel)/launch/loam.launch" />
   <arg name="world" default="empty"/>
   <arg name="paused" default="false"/>
   <arg name="use_sim_time" default="true"/>
@@ -24,22 +18,17 @@
   <include file="$(find gazebo_ros)/launch/empty_world.launch">
     <arg name="world_name" value="$(find feldschwarm_robot_devel)/worlds/scenario_1.world"/>
     <arg name="paused" value="$(arg paused)"/>
-    <arg name="use_sim_time" value="$(arg use_sim_time)"/>
+    <arg name="use_sim_time" value="true"/>
     <arg name="gui" value="$(arg gui)"/>
     <arg name="headless" value="$(arg headless)"/>
     <arg name="debug" value="$(arg debug)"/>
   </include>
   
-  <include file="$(find feldschwarm_robot_devel)/launch/robot_description.launch"/>
-  <include file="$(find feldschwarm_robot_devel)/launch/loam.launch" />
+ 
 
-  <!--spawn a robot in gazebo world-->
-  <node name="urdf_spawner" pkg="gazebo_ros" type="spawn_model" respawn="false"
-  output="screen" args="-urdf -param robot_description -model feldschwarm_robot 
-              -x $(arg x) -y $(arg y) -z $(arg z)
-              -R $(arg roll) -P $(arg pitch) -Y $(arg yaw)"/>
+  
 
   <!--launch rviz-->
   <node name="rviz" pkg="rviz" type="rviz" args="-d $(find feldschwarm_robot_devel)/launch/loam_scnr_1.rviz"/>
-
+   <!-- args="-d $(find feldschwarm_robot_devel)/launch/loam_scnr_1.rviz"-->
 </launch>

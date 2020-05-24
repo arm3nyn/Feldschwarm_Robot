@@ -6,24 +6,24 @@
 
   <xacro:property name="scale" value="1.0" />
 
-  <xacro:property name="mower_width" value="${scale * 1}" />
-  <xacro:property name="mower_length" value="${scale * 1.5}" />
-  <xacro:property name="mower_height" value="${scale * 0.4}" />
-  <xacro:property name="mower_mass" value="${scale * 20}" />
+  <xacro:property name="robot_width" value="${scale * 1}" />
+  <xacro:property name="robot_length" value="${scale * 1.5}" />
+  <xacro:property name="robot_height" value="${scale * 0.4}" />
+  <xacro:property name="robot_mass" value="${scale * 20}" />
 
   <xacro:property name="base_x_offset" value="0" />
 
-  <xacro:property name="height_2" value="${mower_height * mower_height}" />
-  <xacro:property name="width_2" value="${mower_width * mower_width}" />
-  <xacro:property name="length_2" value="${mower_length * mower_length}" />
-  <xacro:property name="mower_inertia_xx" value="${mower_mass/12.0 * (height_2 + width_2)}" />
-  <xacro:property name="mower_inertia_yy" value="${mower_mass/12.0 * (height_2 + length_2)}" />
-  <xacro:property name="mower_inertia_zz" value="${mower_mass/12.0 * (width_2 + length_2)}" />
-  <xacro:property name="mower_i_x_pos" value="${base_x_offset}" />
+  <xacro:property name="height_2" value="${robot_height * robot_height}" />
+  <xacro:property name="width_2" value="${robot_width * robot_width}" />
+  <xacro:property name="length_2" value="${robot_length * robot_length}" />
+  <xacro:property name="robot_inertia_xx" value="${robot_mass/12.0 * (height_2 + width_2)}" />
+  <xacro:property name="robot_inertia_yy" value="${robot_mass/12.0 * (height_2 + length_2)}" />
+  <xacro:property name="robot_inertia_zz" value="${robot_mass/12.0 * (width_2 + length_2)}" />
+  <xacro:property name="robot_i_x_pos" value="${base_x_offset}" />
 
-  <xacro:property name="mower_frame_width" value="${mower_width - 2.1 * wheel_length}" />
-  <xacro:property name="mower_frame_length" value="${mower_length*1.2}" />
-  <xacro:property name="mower_frame_height" value="${mower_height/4.0}" />
+  <xacro:property name="robot_frame_width" value="${robot_width - 2.1 * wheel_length}" />
+  <xacro:property name="robot_frame_length" value="${robot_length*1.2}" />
+  <xacro:property name="robot_frame_height" value="${robot_height/4.0}" />
 
 
 
@@ -60,24 +60,24 @@
 
   <link name='chassis'>
     <inertial>
-      <mass value="${mower_mass}"/>
-      <origin xyz="${mower_i_x_pos} 0 ${mower_i_x_pos}" rpy=" 0 0 0"/>
+      <mass value="${robot_mass}"/>
+      <origin xyz="${robot_i_x_pos} 0 ${robot_i_x_pos}" rpy=" 0 0 0"/>
       <inertia
-          ixx="${mower_inertia_xx}" ixy="0" ixz="0"
-          iyy="${mower_inertia_yy}" iyz="0"
-          izz="${mower_inertia_zz}" />
+          ixx="${robot_inertia_xx}" ixy="0" ixz="0"
+          iyy="${robot_inertia_yy}" iyz="0"
+          izz="${robot_inertia_zz}" />
     </inertial>
 
     <collision>
       <origin xyz="${base_x_offset} 0 0" rpy=" 0 0 0"/>
       <geometry>
-        <box size="${mower_length} ${mower_width} ${mower_height}"/>
+        <box size="${robot_length} ${robot_width} ${robot_height}"/>
       </geometry>
     </collision>
     <visual>
       <origin xyz="${base_x_offset} 0 0" rpy=" 0 0 0"/>
       <geometry>
-        <box size="${mower_length} ${mower_width} ${mower_height}"/>
+        <box size="${robot_length} ${robot_width} ${robot_height}"/>
       </geometry>
     </visual>
   </link>
@@ -294,7 +294,7 @@
 
   <xacro:include filename="$(find velodyne_description)/urdf/VLP-16.urdf.xacro"/>
   <VLP-16 parent="chassis" name="velodyne" topic="/velodyne_points" hz="10" samples="1024" gpu="true" lasers="16" max_range="100">
-    <origin xyz="0 0 0.4" rpy="0 0 -1.57  " />
+    <origin xyz="0 0 0.4" rpy="0 0 0 " />
   </VLP-16>
 
 </robot>
