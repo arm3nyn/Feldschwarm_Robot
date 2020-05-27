@@ -1,0 +1,9 @@
+float64 x_laser
+float64 y_laser
+float64 x_gt
+float64 y_gt
+float64 distanceGt
+float64 distanceLaser
+float64 delta_x
+float64 delta_y
+float64 deltaDistance

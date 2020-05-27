@@ -17,6 +17,7 @@ std_msgs
 tf
 urdf
 xacro
+message_generation
 )
 
 ## System dependencies are found with CMake's conventions
@@ -53,11 +54,11 @@ xacro
 ##   * add every package in MSG_DEP_SET to generate_messages(DEPENDENCIES ...)
 
 ## Generate messages in the 'msg' folder
-# add_message_files(
-#   FILES
-#   Message1.msg
-#   Message2.msg
-# )
+ add_message_files(
+   FILES
+   odom_msg.msg
+   
+ )
 
 ## Generate services in the 'srv' folder
 # add_service_files(
@@ -111,7 +112,7 @@ xacro
 catkin_package(
 #  INCLUDE_DIRS include
 #  LIBRARIES feldschwarm_robot_devel
-#  CATKIN_DEPENDS geometry_msgs ros_gazebo roscpp rospy rviz std_msgs tf urdf xacro
+   CATKIN_DEPENDS geometry_msgs ros_gazebo roscpp rospy rviz std_msgs tf urdf xacro message_runtime
 #  DEPENDS system_lib
 )
 
@@ -138,6 +139,8 @@ include_directories(
 # add_dependencies(${PROJECT_NAME} ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
 #add_executable(odom_transform src/odom_transform.cpp)
 #target_link_libraries(odom_transform ${catkin_LIBRARIES})
+add_executable(odom_listener src/odom_listener.cpp)
+target_link_libraries(odom_listener ${catkin_LIBRARIES})
 
 ## Declare a C++ executable
 ## With catkin_make all packages are built within a single CMake context
