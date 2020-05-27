@@ -9,7 +9,7 @@ project(feldschwarm_robot_devel)
 ## is used, also find other catkin packages
 find_package(catkin REQUIRED COMPONENTS
 geometry_msgs
-gazebo
+gazebo_ros
 roscpp
 rospy
 rviz

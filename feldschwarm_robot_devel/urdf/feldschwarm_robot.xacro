@@ -110,7 +110,7 @@
       <surface>
         <friction>
           <fdir1>1 0 0</fdir1>
-          <kp>${wheel_kp}</kp> <!-- kp and kd for rubber -->
+          <kp>${wheel_kp}</kp> 
           <kd>${wheel_kd}</kd>
           <mu>${wheel_mu1}</mu>
           <mu2>${wheel_mu2}</mu2>
@@ -198,7 +198,7 @@
       <surface>
         <friction>
           <fdir1>1 0 0</fdir1>
-          <kp>${wheel_kp}</kp> <!-- kp and kd for rubber -->
+          <kp>${wheel_kp}</kp> 
           <kd>${wheel_kd}</kd>
           <mu>${wheel_mu1}</mu>
           <mu2>${wheel_mu2}</mu2>
@@ -242,7 +242,7 @@
       <surface>
         <friction>
           <fdir1>1 0 0</fdir1>
-          <kp>${wheel_kp}</kp> <!-- kp and kd for rubber -->
+          <kp>${wheel_kp}</kp> 
           <kd>${wheel_kd}</kd>
           <mu>${wheel_mu1}</mu>
           <mu2>${wheel_mu2}</mu2>
