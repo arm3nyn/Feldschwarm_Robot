@@ -3,7 +3,7 @@
 #include <message_filters/subscriber.h>
 #include <nav_msgs/Odometry.h>
 #include <geometry_msgs/Pose.h>
-#include "feldscharm_robot_devel/odom_msg.h"
+#include "feldschwarm_robot_devel/odom_msg.h"
 
 //Publish odom_xy  laser_odom_xy delta_x  distance_gt_  distance_laserOdom deltaDistance
 
@@ -14,7 +14,7 @@ public:
     ros::NodeHandle n;
     ros::Subscriber odomSub;
     ros::Subscriber laserOdomSub;
-    ros::Publisher gtOdomPub;
+    ros::Publisher odomDataPub;
 
 
 
@@ -23,7 +23,7 @@ public:
     //feldschwarm_robot_devel::odom_msg laser_odom;
     OdomListener()
     {
-        gtOdomPub=n.advertise<feldschwarm_robot_devel::odom_msg>("odom_listener",100);
+        odomDataPub=n.advertise<feldschwarm_robot_devel::odom_msg>("odom_listener",100);
         laserOdomSub=n.subscribe("laser_odom_to_init",100,&OdomListener::cb_laser,this);
         odomSub=n.subscribe("odom",100,&OdomListener::cb_odom,this);
 
@@ -37,9 +37,10 @@ public:
     { 
         odom_data.x_laser=laser_msg->pose.pose.position.x;
         odom_data.y_laser=laser_msg->pose.pose.position.y;
-        ROS_DEBUG("laser odometry x: y:(%.2f,%.2f)",odom_data.x_laser,odom_data.y_laser);
-        gtOdomPub.publish(odom_data);
+        
+        odomDataPub.publish(odom_data);
         ROS_INFO("laser call back");
+        ROS_INFO("laser odometry x: y:(%.2f,%.2f)",odom_data.x_laser,odom_data.y_laser);
 
 
     }
@@ -51,12 +52,13 @@ public:
         odom_data.x_gt=odom_msg->pose.pose.position.x;
         odom_data.y_gt=odom_msg->pose.pose.position.y;
 
-        ROS_INFO("gt call back");
+        
         //gt_odom.pose.pose.position.y=odom_msg->pose.pose.position.y;
         
-        gtOdomPub.publish(odom_data);
+        odomDataPub.publish(odom_data);
+        ROS_INFO("gt call back");
         
-        //ROS_DEBUG("groundTruth odometry x: y:(%.2f,%.2f)",gt_odom.pose.pose.position.x,gt_odom.pose.pose.position.y);
+        ROS_INFO("groundTruth odometry x: y:(%.2f,%.2f)",odom_data.x_gt,odom_data.y_gt);
 
 
 

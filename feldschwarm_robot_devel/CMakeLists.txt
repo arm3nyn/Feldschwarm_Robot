@@ -55,6 +55,7 @@ message_generation
 
 ## Generate messages in the 'msg' folder
  add_message_files(
+   DIRECTORY msg
    FILES
    odom_msg.msg
    
@@ -75,10 +76,10 @@ message_generation
 # )
 
 ## Generate added messages and services with any dependencies listed here
-# generate_messages(
-#   DEPENDENCIES
-#   std_msgs  # Or other packages containing msgs
-# )
+ generate_messages(
+   DEPENDENCIES
+   std_msgs  # Or other packages containing msgs
+ )
 
 ################################################
 ## Declare ROS dynamic reconfigure parameters ##
@@ -112,7 +113,7 @@ message_generation
 catkin_package(
 #  INCLUDE_DIRS include
 #  LIBRARIES feldschwarm_robot_devel
-   CATKIN_DEPENDS geometry_msgs ros_gazebo roscpp rospy rviz std_msgs tf urdf xacro message_runtime
+   CATKIN_DEPENDS geometry_msgs gazebo_ros roscpp rospy rviz std_msgs tf urdf xacro message_generation
 #  DEPENDS system_lib
 )
 
@@ -141,6 +142,7 @@ include_directories(
 #target_link_libraries(odom_transform ${catkin_LIBRARIES})
 add_executable(odom_listener src/odom_listener.cpp)
 target_link_libraries(odom_listener ${catkin_LIBRARIES})
+add_dependencies(odom_listener feldschwarm_robot_devel_generate_messages_cpp)
 
 ## Declare a C++ executable
 ## With catkin_make all packages are built within a single CMake context
