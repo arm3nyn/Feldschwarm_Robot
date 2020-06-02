@@ -65,6 +65,8 @@ public:
     }
     
     
+    
+   
         
         
       
@@ -73,11 +75,24 @@ public:
 
 int main(int argc, char* argv[])
 {
-ros::init(argc, argv,"OdomListener");
+ros::init(argc, argv,"odomListener");
 OdomListener listenOdom;
+while (ros::ok())
+{
+    ros::spinOnce();
+listenOdom.odom_data.delta_x=listenOdom.odom_data.x_gt-listenOdom.odom_data.x_laser;
+listenOdom.odom_data.delta_y=listenOdom.odom_data.y_gt-listenOdom.odom_data.y_laser;
+listenOdom.odomDataPub.publish(listenOdom.odom_data);  
 
-ros::spin();
+
+}
 
 
+
+
+
+//ros::spin();
+
+return 0;
 
 }

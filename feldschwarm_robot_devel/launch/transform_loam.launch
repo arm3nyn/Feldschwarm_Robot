@@ -7,6 +7,7 @@
    <!--node pkg="feldschwarm_robot_devel" type="odom_transform"    name="odom_transform"    output="screen"/-->
 
    <node pkg="tf2_ros" type="static_transform_publisher" name="transform_broadcaster" args="0 0 0.638  0 0 0   odom camera_init"/>
+   <node pkg="feldschwarm_robot_devel" type="odom_listener" name="odom_listener" output="screen"/>
     
    
 
