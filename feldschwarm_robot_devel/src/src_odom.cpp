@@ -88,6 +88,7 @@ namespace gazebo {
                     ignition::math::Vector3d(std::cos(theta) * this->velcmd.x, std::sin(theta) * this->velcmd.x, 0));
             this->model->SetAngularVel(ignition::math::Vector3d(0, 0, this->velcmd.z));
             std::cout << theta << std::endl;
+            
 
             // Apply a small linear velocity to the model.
             //this->model->SetAngularVel(ignition::math::Vector3d(0, 0, this->vel));

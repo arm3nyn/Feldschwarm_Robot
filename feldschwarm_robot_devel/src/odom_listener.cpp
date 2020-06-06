@@ -26,6 +26,7 @@ public:
         odomDataPub=n.advertise<feldschwarm_robot_devel::odom_msg>("odom_listener",100);
         laserOdomSub=n.subscribe("laser_odom_to_init",100,&OdomListener::cb_laser,this);
         odomSub=n.subscribe("odom",100,&OdomListener::cb_odom,this);
+        
 
     }
     ~OdomListener()
@@ -39,8 +40,8 @@ public:
         odom_data.y_laser=laser_msg->pose.pose.position.y;
         
         odomDataPub.publish(odom_data);
-        ROS_INFO("laser call back");
-        ROS_INFO("laser odometry x: y:(%.2f,%.2f)",odom_data.x_laser,odom_data.y_laser);
+        //ROS_INFO("laser call back");
+        //ROS_INFO("laser odometry x: y:(%.2f,%.2f)",odom_data.x_laser,odom_data.y_laser);
 
 
     }
@@ -51,14 +52,18 @@ public:
         //gt_odom.child_frame_id = "/robot_footprint";
         odom_data.x_gt=odom_msg->pose.pose.position.x;
         odom_data.y_gt=odom_msg->pose.pose.position.y;
+        
+        
+        
+        
 
         
         //gt_odom.pose.pose.position.y=odom_msg->pose.pose.position.y;
         
         odomDataPub.publish(odom_data);
-        ROS_INFO("gt call back");
+        //ROS_INFO("gt call back");
         
-        ROS_INFO("groundTruth odometry x: y:(%.2f,%.2f)",odom_data.x_gt,odom_data.y_gt);
+        //ROS_INFO("groundTruth odometry x: y:(%.2f,%.2f)",odom_data.x_gt,odom_data.y_gt);
 
 
 
@@ -82,7 +87,9 @@ while (ros::ok())
     ros::spinOnce();
 listenOdom.odom_data.delta_x=listenOdom.odom_data.x_gt-listenOdom.odom_data.x_laser;
 listenOdom.odom_data.delta_y=listenOdom.odom_data.y_gt-listenOdom.odom_data.y_laser;
-listenOdom.odomDataPub.publish(listenOdom.odom_data);  
+listenOdom.odomDataPub.publish(listenOdom.odom_data);
+ 
+ 
 
 
 }
