@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <launch>
-  <include file="$(find feldschwarm_robot_devel)/launch/robot_description.launch"/>
-  <include file="$(find feldschwarm_robot_devel)/launch/loam.launch" />
+  <include file="$(find feldschwarm_robot_devel)/launch/loam_launch/robot_description.launch"/>
+  <include file="$(find feldschwarm_robot_devel)/launch/loam_launch/loam.launch" />
   <arg name="world" default="empty"/>
   <arg name="paused" default="false"/>
   <arg name="use_sim_time" default="true"/>
