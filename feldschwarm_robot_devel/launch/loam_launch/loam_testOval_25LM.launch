@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <launch>
-  <include file="$(find feldschwarm_robot_devel)/launch/loam_launch/robot_description.launch"/>
-  <include file="$(find feldschwarm_robot_devel)/launch/loam_launch/loam.launch" />
+  <include file="$(find feldschwarm_robot_devel)/launch/loam_launch/loam_launch/robot_description.launch"/>
+  <include file="$(find feldschwarm_robot_devel)/launch/loam_launch/loam_launch/loam.launch" />
   <arg name="world" default="empty"/>
   <arg name="paused" default="false"/>
   <arg name="use_sim_time" default="true"/>
@@ -16,7 +16,7 @@
   
 
   <include file="$(find gazebo_ros)/launch/empty_world.launch">
-    <arg name="world_name" value="$(find feldschwarm_robot_devel)/worlds/nonCurvedScenario/2_lm/2_lm.world"/>
+    <arg name="world_name" value="$(find feldschwarm_robot_devel)/worlds/testOval_worlds/testOval_25LM.world"/>
     <arg name="paused" value="$(arg paused)"/>
     <arg name="use_sim_time" value="true"/>
     <arg name="gui" value="$(arg gui)"/>
@@ -31,5 +31,5 @@
 
   <!--launch rviz-->
   <node name="rviz" pkg="rviz" type="rviz" args="-d $(find feldschwarm_robot_devel)/launch/archive/loam_scnr_1.rviz"/>
-   <!-- args="-d $(find feldschwarm_robot_devel)/launch/loam_scnr_1.rviz"-->
+   <!-- args="-d $(find feldschwarm_robot_devel)/rviz/loamRviz/loam_scnr_1.rviz"-->
 </launch>
