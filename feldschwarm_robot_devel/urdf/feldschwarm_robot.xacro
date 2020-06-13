@@ -8,7 +8,7 @@
 
   <xacro:property name="robot_width" value="${scale * 1}" />
   <xacro:property name="robot_length" value="${scale * 1.5}" />
-  <xacro:property name="robot_height" value="${scale * 0.4}" />
+  <xacro:property name="robot_height" value="${scale * 0.25}" />
   <xacro:property name="robot_mass" value="${scale * 20}" />
 
   <xacro:property name="base_x_offset" value="0" />
@@ -28,7 +28,7 @@
 
 
   <xacro:property name="wheel_length" value="${scale * 0.1}" />
-  <xacro:property name="wheel_radius" value="${scale * 0.2}" />
+  <xacro:property name="wheel_radius" value="${scale * 0.25}" />
   <xacro:property name="wheel_mass" value="${scale * 1}" />
   <xacro:property name="wheel_inertia" value="${scale * 1e-3}" />
   <xacro:property name="wheel_x_offset" value="0.75" />
@@ -44,8 +44,8 @@
 
   <xacro:property name="wheel_kp" value="1000000.0" />
   <xacro:property name="wheel_kd" value="100.0" />
-  <xacro:property name="wheel_mu1" value="1" />
-  <xacro:property name="wheel_mu2" value="1" />
+  <xacro:property name="wheel_mu1" value="0.8" />
+  <xacro:property name="wheel_mu2" value="0.8" />
   <xacro:property name="wheel_slip1" value="0.5" />
   <xacro:property name="wheel_slip2" value="0" />
 

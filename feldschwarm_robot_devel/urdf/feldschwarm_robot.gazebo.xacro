@@ -27,8 +27,8 @@
       <rightFrontJoint>right_front_wheel_hinge</rightFrontJoint>
       <leftRearJoint>left_back_wheel_hinge</leftRearJoint>
       <rightRearJoint>right_back_wheel_hinge</rightRearJoint>
-      <wheelSeparation>0.46</wheelSeparation>
-      <wheelDiameter>0.16</wheelDiameter>
+      <wheelSeparation>0.01</wheelSeparation>
+      <wheelDiameter>0.2</wheelDiameter>
       <robotBaseFrame>robot_footprint</robotBaseFrame>
       <torque>200</torque>
       <MaxForce>5.0</MaxForce>
