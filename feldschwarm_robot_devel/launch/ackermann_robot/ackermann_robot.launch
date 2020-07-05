@@ -1,0 +1,49 @@
+<?xml version="1.0"?>
+<launch>
+
+  <arg name="namespace"   default="ackermann_robot"/>
+  <arg name="world"       default="empty" />
+  <arg name="cmd_timeout" default="0.5"/>
+  
+
+  <!-- Vehicle pose -->
+  <arg name="x"           default="0.0"/>
+  <arg name="y"           default="0.0"/>
+  <arg name="z"           default="0.2"/>
+  <arg name="roll"        default="0.0"/>
+  <arg name="pitch"       default="0.0"/>
+  <arg name="yaw"         default="0.0"/>
+
+  <!-- load robot description -->
+  <include file="$(find ackermann_robot)/launch/ackermann_robot.launch">
+    <arg name="namespace" value="$(arg namespace)"/>
+  </include>
+
+  <group ns="$(arg namespace)">
+
+    
+
+    <!-- Spawn the vehicle. -->
+    <node name="spawn_vehicle" pkg="gazebo_ros" type="spawn_model"
+          args="-urdf -param robot_description -model ackermann_robot
+                -gazebo_namespace /$(arg namespace)/gazebo
+                -x $(arg x) -y $(arg y) -z $(arg z)
+                -R $(arg roll) -P $(arg pitch) -Y $(arg yaw)"/>
+
+    <!-- Load the joint controllers. One of these publishes the joint states
+         to joint_states. -->
+    <node name="controller_spawner" pkg="controller_manager" type="spawner"
+          args="$(find ackermann_robot)/config/ackermann_robot_joint_cntrl.yaml"/>
+
+    <!-- Control the steering, axle, and shock absorber joints. -->
+    <node name="ackermann_controller" pkg="ackermann_robot"
+          type="ackermann_controller.py">
+      <param name="cmd_timeout" value="$(arg cmd_timeout)"/>
+      <rosparam file="$(find ackermann_robot)/config/ackermann_robot_cntrl.yaml" command="load"/>
+    </node>
+
+    
+
+  </group>
+
+</launch>
