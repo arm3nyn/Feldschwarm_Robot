@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<launch>
+
+
+  <include file="$(find velodyne_pointcloud)/launch/VLP16_points.launch"/>
+  <include file="$(find feldschwarm_robot_devel)/launch/gps/gps_initial.launch"/>
+
+
+
+
+
+
+
+
+</launch>

@@ -10,6 +10,7 @@
     <param name="local_xy_origin" value="testOval_Base"/> 
     <param name="local_xy_navsatfix_topic" value="/gps/fix"/>
     <remap from="/gps/fix" to="/gps/fix"/>
+   
     <rosparam param="local_xy_origins">
       [{ name: testOval_Base,
          latitude: 51.02670807,
@@ -19,7 +20,7 @@
        
 
     </rosparam>
-  
+   
   </node>
   
            <!-- Translate from NavSatFix to GPSFix //-->

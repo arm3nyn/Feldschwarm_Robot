@@ -12,7 +12,7 @@
   <arg name="debug" default="false"/>
 
   <include file="$(find gazebo_ros)/launch/empty_world.launch">
-    <arg name="world_name" value="$(find feldschwarm_robot_devel)/worlds/testOval/test_oval.world"/>
+    <arg name="world_name" value="$(find feldschwarm_robot_devel)/worlds/curvedScenario/archive/20_lm.world"/>
     <arg name="paused" value="$(arg paused)"/>
     <arg name="use_sim_time" value="$(arg use_sim_time)"/>
     <arg name="gui" value="$(arg gui)"/>
