@@ -1,0 +1,24 @@
+<launch>
+
+  <include file="$(find feldschwarm_robot_devel)/launch/gps/mapviz.launch"/>
+
+
+  <!--node pkg="tf" type="static_transform_publisher" name="base_gps" args="0 0 0 0 0 0 /base_link /map 100"/-->
+
+  <node pkg="robot_localization" type="navsat_transform_node" name="navsat_transform_node" respawn="true" output="screen">
+    <param name="yaw_offset" value="0"/>
+    <param name="zero_altitude" value="false"/>
+    <param name="publish_filtered_gps" value="true"/>
+    <param name="broadcast_utm_transform" value="true"/>
+    <param name="use_odometry_yaw" value="false"/>
+
+    <param name="wait_for_datum" value="true"/>
+    <rosparam param="datum">[49.2757225, -122.895907, 134.4, map, base_link]</rosparam>
+
+    <!-- Remap input topics -->
+    <remap from="/gps/fix" to="/my_gps/fix"/>
+    
+    <!--remap from="/odometry/filtered" to="/robot/pose"/-->
+  </node>
+
+</launch>

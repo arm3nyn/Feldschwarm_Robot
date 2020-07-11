@@ -1,16 +1,16 @@
 <?xml version="1.0"?>
 <launch>
-  
+  <param name="use_sim_time" value="true"/>
   <node pkg="mapviz" type="mapviz" name="mapviz" required="true"/>
 
 
 
   <node pkg="swri_transform_util" type="initialize_origin.py" name="initialize_origin" output="screen">
     <param name="local_xy_frame" value="/map"/>
-    <param name="local_xy_origin" value="testOval_Base"/> 
+    <param name="local_xy_origin" value="auto"/> 
     <param name="local_xy_navsatfix_topic" value="/gps/fix"/>
     <remap from="/gps/fix" to="/gps/fix"/>
-   
+   <!--
     <rosparam param="local_xy_origins">
       [{ name: testOval_Base,
          latitude: 51.02670807,
@@ -20,7 +20,7 @@
        
 
     </rosparam>
-   
+    -->
   </node>
   
            <!-- Translate from NavSatFix to GPSFix //-->
@@ -30,7 +30,8 @@
       <remap from="/gps_fix_out"    to="/my_gpsfix"/>
   </node-->
 
-  <node pkg="tf" type="static_transform_publisher" name="swri_transform" args="0 0 0 0 0 0 /map /origin 100"  />
+  <!--node pkg="tf" type="static_transform_publisher" name="swri_transform" args="0 0 0 0 0 0 world map 100"  /-->
+  <node pkg="tf" type="static_transform_publisher" name="loam_gps_transform" args="0 0 0  -1.57 0 0   /map /odom 100"/>
 
 
 </launch>

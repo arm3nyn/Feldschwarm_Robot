@@ -4,6 +4,8 @@
 
   <include file="$(find velodyne_pointcloud)/launch/VLP16_points.launch"/>
   <include file="$(find feldschwarm_robot_devel)/launch/gps/gps_initial.launch"/>
+  <!--include file="$(find feldschwarm_robot_devel)/launch/gps/gps_rear.launch"/-->
+
 
 
 
