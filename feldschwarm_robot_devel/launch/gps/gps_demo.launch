@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <launch>
 
-  <node pkg="tf" type="static_transform_publisher" name="loam_gps_transform" args="0 0 0  -1.5707963 0 0   /map /odom 100"/>
-  <node pkg="tf" type="static_transform_publisher" name="odom2camera_init_transform" args="0 0 0  0 0 0   /odom /camera_init 100"/>
+  <node pkg="tf2_ros" type="static_transform_publisher" name="loam_gps_transform" args="0 0 0  -1.5707963 0 0   /map /odom 100"/>
+  <node pkg="tf2_ros" type="static_transform_publisher" name="odom2camera_init_transform" args="0 0 0  0 0 0   /odom /camera_init 100"/>
 
   <include file="$(find feldschwarm_robot_devel)/launch/gps/navsat_transform.launch"/>
   <include file="$(find feldschwarm_robot_devel)/launch/gps/mapviz.launch"/>

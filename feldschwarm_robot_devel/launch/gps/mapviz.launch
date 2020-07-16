@@ -30,9 +30,9 @@
       <remap from="/gps_fix_out"    to="/my_gpsfix"/>
   </node-->
 
-  <!--node pkg="tf" type="static_transform_publisher" name="swri_transform" args="0 0 0 0 0 0 world map 100"  /-->
-  <!--node pkg="tf" type="static_transform_publisher" name="loam_gps_transform" args="0 0 0  -1.57 0 0   /map /odom 100"/>
-  <node pkg="tf" type="static_transform_publisher" name="odom2camera_init_transform" args="0 0 0  0 0 0   /odom /camera_init 100"/-->
+  <!--node pkg="tf2_ros" type="static_transform_publisher" name="swri_transform" args="0 0 0 0 0 0 world map 100"  /-->
+  <node pkg="tf2_ros" type="static_transform_publisher" name="loam_gps_transform" args="0 0 0  -1.5707963 0 0   /map /odom "/>
+  <node pkg="tf" type="static_transform_publisher" name="odom2camera_init_transform" args="0 0 0  0 0 0   /odom /camera_init 100"/>
 
 
 </launch>

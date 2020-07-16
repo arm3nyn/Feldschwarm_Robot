@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<launch>
+
+ 
+  <include file="$(find feldschwarm_robot_devel)/launch/gps/gps_to_pose.launch"/>
+  <!--include file="$(find feldschwarm_robot_devel)/launch/gps/mapviz.launch"/-->
+
+  <node pkg="tf" type="static_transform_publisher" name="gps_to_odom_transform" args="0 0 0  0 0  0   /world /odom 100"/>
+  <!--node pkg="tf2_ros" type="static_transform_publisher" name="camera_init_to_odom_transform" args="0 0 0  -1.5707963 0 0   / /laser_odom 100"/-->
+
+
+
+
+
+
+
+
+
+</launch>
