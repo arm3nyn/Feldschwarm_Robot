@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<launch>
+
+
+  <include file="$(find feldschwarm_robot_devel)/launch/gps/gps_to_pose.launch"/>
+  <include file="$(find feldschwarm_robot_devel)/launch/loam_launch/loam.launch"/>
+
+  
+
+
+
+
+
+
+
+
+
+</launch>
