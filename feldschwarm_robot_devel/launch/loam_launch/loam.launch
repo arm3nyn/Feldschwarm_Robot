@@ -15,6 +15,7 @@
 
   <node pkg="loam_velodyne" type="laserOdometry" name="laserOdometry" output="screen" respawn="true">
     <param name="scanPeriod" value="$(arg scanPeriod)" />
+    <!--remap from="/laser_odom_to_init" to="/lidar_odom" /-->
   </node>
 
   <node pkg="loam_velodyne" type="laserMapping" name="laserMapping" output="screen">

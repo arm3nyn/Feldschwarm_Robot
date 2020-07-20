@@ -2,7 +2,7 @@
 <!--include file="$(find feldschwarm_robot_devel)/launch/gps/mapviz.launch"/-->
 
 <node name="gps_utils_set" pkg="geodetic_utils" type="set_gps_reference_node" output="screen">
-  <remap from="/gps/fix" to="/gps/fix"/>
+  <remap from="gps" to="/gps/fix"/>
 </node>
 
 
@@ -10,8 +10,8 @@
   <param name="~frame_id" value="world"/>
   <param name="~publish_pose" value="true"/>
   
-  <remap from="/gps/fix" to="/gps/fix"/>
-  <remap from="/gps/navheading" to="/gps/navheading"/>
+  <remap from="gps" to="/gps/fix"/>
+  <remap from="imu" to="/gps/navheading"/>
   <remap from="gps_pose" to="gps_pose" />
   <remap from="gps_position" to="gps_position" />
   <remap from="gps_transform" to="gps_transform" />

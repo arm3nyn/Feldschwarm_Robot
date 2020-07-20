@@ -13,8 +13,8 @@
 
   <!-- in case you use velodyne_driver, comment out the following line -->
   <node pkg="nodelet" type="nodelet" name="$(arg nodelet_manager)" args="manager" output="screen"/>
-    
-     
+
+
 
   <!-- prefiltering_nodelet -->
   <node pkg="nodelet" type="nodelet" name="prefiltering_nodelet" args="load hdl_graph_slam/PrefilteringNodelet $(arg nodelet_manager)">
@@ -49,7 +49,7 @@
       <param name="downsample_method" value="NONE" />
       <param name="downsample_resolution" value="0.1" />
       <!-- ICP, GICP, NDT, GICP_OMP, or NDT_OMP(recommended) -->
-      <param name="registration_method" value="NDT_OMP" />
+      <param name="registration_method" value="GICP" />
       <param name="transformation_epsilon" value="0.01"/>
       <param name="maximum_iterations" value="64"/>
       <param name="use_reciprocal_correspondences" value="false"/>
@@ -58,7 +58,7 @@
       <param name="ndt_resolution" value="1.0" />
       <param name="ndt_num_threads" value="0" />
       <param name="ndt_nn_search_method" value="DIRECT7" />
-      
+
   </node>
 
   <!-- floor_detection_nodelet -->
@@ -100,7 +100,7 @@
     <param name="min_edge_interval" value="5.0" />
     <param name="fitness_score_thresh" value="0.5" />
     <!-- scan matching params -->
-    <param name="registration_method" value="NDT_OMP" />
+    <param name="registration_method" value="GICP" />
     <param name="transformation_epsilon" value="0.01"/>
     <param name="maximum_iterations" value="64"/>
     <param name="use_reciprocal_correspondences" value="false"/>
