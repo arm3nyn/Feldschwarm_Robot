@@ -24,7 +24,11 @@
 
   <node pkg="loam_velodyne" type="transformMaintenance" name="transformMaintenance" output="screen">
   </node>
+<<<<<<< HEAD
   <node pkg="tf2_ros" type="static_transform_publisher" name="transform_broadcaster" args="0 0 0  0 0 0   odom camera_init "/>
+=======
+  <!--node pkg="tf2_ros" type="static_transform_publisher" name="transform_broadcaster" args="0 0 0.638  -1.5707963 0 0   odom camera_init "/-->
+>>>>>>> d213acb838420d468a4f0ec47a37731ea915e2ef
 
 
   <!--group if="$(arg rviz)">
