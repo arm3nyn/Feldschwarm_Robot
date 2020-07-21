@@ -33,7 +33,7 @@
       <torque>200</torque>
       <MaxForce>5.0</MaxForce>
       <commandTopic>cmd_vel</commandTopic>
-      <odometryTopic>odom</odometryTopic>
+      <odometryTopic>odom_gazebo</odometryTopic>
       <odometryFrame>odom</odometryFrame>
       <broadcastTF>true</broadcastTF>
       <covariance_x>0.001</covariance_x> <!-- 0.0001 -->
