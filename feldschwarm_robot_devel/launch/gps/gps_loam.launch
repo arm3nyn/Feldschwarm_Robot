@@ -3,7 +3,15 @@
 
 
   <include file="$(find feldschwarm_robot_devel)/launch/gps/gps_to_pose.launch"/>
+                    <!--Launch loam algorithm-->
   <include file="$(find feldschwarm_robot_devel)/launch/loam_launch/loam.launch"/>
+                   <!--Launch a-loam algorithm-->
+  <!--include file="$(find feldschwarm_robot_devel)/launch/aloam_launch/aloam.launch"/-->
+                   <!--Launch lego-loam algorithm-->
+  <!--include file="$(find feldschwarm_robot_devel)/launch/loam_launch/loam.launch"/-->
+                     <!--Launch hdl_gicp algorithm-->
+  <!--include file="$(find feldschwarm_robot_devel)/launch/loam_launch/loam.launch"/-->
+
 
   
 

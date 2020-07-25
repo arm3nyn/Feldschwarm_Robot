@@ -15,7 +15,7 @@
 
   <node pkg="loam_velodyne" type="laserOdometry" name="laserOdometry" output="screen" respawn="true">
     <param name="scanPeriod" value="$(arg scanPeriod)" />
-    <!--remap from="/laser_odom_to_init" to="/lidar_odom" /-->
+    <remap from="/laser_odom_to_init" to="/lidar_odom" />
   </node>
 
   <node pkg="loam_velodyne" type="laserMapping" name="laserMapping" output="screen">
@@ -24,11 +24,14 @@
 
   <node pkg="loam_velodyne" type="transformMaintenance" name="transformMaintenance" output="screen">
   </node>
-<<<<<<< HEAD
-  <node pkg="tf2_ros" type="static_transform_publisher" name="transform_broadcaster" args="0 0 0  0 0 0   odom camera_init "/>
-=======
-  <!--node pkg="tf2_ros" type="static_transform_publisher" name="transform_broadcaster" args="0 0 0.638  -1.5707963 0 0   odom camera_init "/-->
->>>>>>> d213acb838420d468a4f0ec47a37731ea915e2ef
+
+
+                         <!-- Static Transform for Feldschwarm Robot -->
+  <!--node pkg="tf2_ros" type="static_transform_publisher" name="transform_broadcaster" args="0 0 0  0 0 0   odom camera_init "/-->
+  
+                         <!-- Static Transform for Ackermann Robot   -->
+  <node pkg="tf2_ros" type="static_transform_publisher" name="transform_broadcaster" args="0 0 0  0 0 0   camera_init base_link "/>
+
 
 
   <!--group if="$(arg rviz)">

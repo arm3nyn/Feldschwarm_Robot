@@ -10,6 +10,18 @@
     <node pkg="tf" type="static_transform_publisher" name="camera_init_to_map"  args="0 0 0 1.570795   0        0 /map    /camera_init 10" />
     <node pkg="tf" type="static_transform_publisher" name="base_link_to_camera" args="0 0 0 -1.570795 0 0        /camera /base_link   10" />
     -->
+                       <!-- Static Transform for Feldschwarm Robot -->
+  <!--node pkg="tf2_ros" type="static_transform_publisher" name="transform_broadcaster" args="0 0 0  0 0 0   odom camera_init "/-->
+  
+                         <!-- Static Transform for Ackermann Robot   -->
+  <node pkg="tf2_ros" type="static_transform_publisher" name="transform_broadcaster" args="0 0 0  0 0 0   camera_init base_link "/>
+
+
+
+
+
+
+
     <!--- LeGO-LOAM -->
     <node pkg="lego_loam" type="imageProjection"    name="imageProjection"    output="screen"/>
     <node pkg="lego_loam" type="featureAssociation" name="featureAssociation" output="screen"/>

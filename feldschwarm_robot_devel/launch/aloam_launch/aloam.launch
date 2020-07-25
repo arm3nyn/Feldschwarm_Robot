@@ -17,6 +17,11 @@
     <node pkg="aloam_velodyne" type="alaserOdometry" name="alaserOdometry" output="screen" />
       <!--remap from="/laser_odom_to_init" to="/lidar_odom" /-->
     <node pkg="aloam_velodyne" type="alaserMapping" name="alaserMapping" output="screen" />
+    
+                       <!--Static Transform for Feldschwarm Robot-->
+    <!--node pkg="tf2_ros" type="static_transform_publisher" name="transform_broadcaster" args="0 0 0  0 0 0   odom camera_init "/-->
+                       <!--Static Transform for Ackermann Robot-->
+    <node pkg="tf2_ros" type="static_transform_publisher" name="transform_broadcaster" args="0 0 0  0 0 0   camera_init base_link "/>
 
 
     <!--

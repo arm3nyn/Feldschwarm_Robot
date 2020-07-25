@@ -9,8 +9,12 @@
   <arg name="points_topic" default="/velodyne_points" />
   <param name="/use_sim_time" value="true"/>
 
-  <!-- transformation between lidar and base_link -->
-  <node pkg="tf" type="static_transform_publisher" name="lidar2base_publisher" args="0 0 0.0 0 0 0 base_link velodyne 10" />
+                       <!-- transformation between lidar and base_link for Ackermann Robot -->
+  <!--node pkg="tf2_ros" type="static_transform_publisher" name="lidar2base_publisher" args="0.0 0.0 0.0 0.0 0.0 0.0 base_link ackermann_robot/velodyne "/-->
+
+ <!-- transformation between lidar and base_link for Feldschwarm Robot -->
+  <node pkg="tf2_ros" type="static_transform_publisher" name="lidar2base_publisher" args="0.0 0.0 0.0 0.0 0.0 0.0 odom base_link "/>
+
 
   <!-- in case you use velodyne_driver, comment out the following line -->
   <node pkg="nodelet" type="nodelet" name="$(arg nodelet_manager)" args="manager" output="screen"/>

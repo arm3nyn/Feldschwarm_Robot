@@ -2,7 +2,7 @@
 
 <launch>
 
-  <include file="$(find feldschwarm_robot_devel)/launch/robot_description.launch"/>
+  <include file="$(find feldschwarm_robot_devel)/launch/loam_launch/robot_description.launch"/>
 
    <!-- Robot pose -->
   <arg name="x" default="0.0"/>
@@ -20,7 +20,7 @@
   <arg name="debug" default="false"/>
 
   <include file="$(find gazebo_ros)/launch/empty_world.launch">
-    <arg name="world_name" value="$(find feldschwarm_robot_devel)/worlds/scenario_1.world"/>
+    <arg name="world_name" value="$(find feldschwarm_robot_devel)/worlds//testOval/test_oval.world"/>
     <arg name="paused" value="$(arg paused)"/>
     <arg name="use_sim_time" value="$(arg use_sim_time)"/>
     <arg name="gui" value="$(arg gui)"/>
@@ -35,6 +35,6 @@
               -R $(arg roll) -P $(arg pitch) -Y $(arg yaw)"/>
 
   <launch rviz-->
-  <node name="rviz" pkg="rviz" type="rviz" args="-d $(find feldschwarm_robot_devel)/launch/Rvizconfig.rviz"/>
+  <!--node name="rviz" pkg="rviz" type="rviz" args="-d $(find feldschwarm_robot_devel)/launch/Rvizconfig.rviz"/-->
 
 </launch>

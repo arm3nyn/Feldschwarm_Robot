@@ -4,6 +4,11 @@
   <arg name="namespace"   default="ackermann_robot"/>
   <arg name="world"       default="empty" />
   <arg name="cmd_timeout" default="0.5"/>
+  <arg name="paused" default="false"/>
+  <arg name="use_sim_time" default="true"/>
+  <arg name="gui" default="true"/>
+  <arg name="headless" default="false"/>
+  <arg name="debug" default="false"/>
   
 
   <!-- Vehicle pose -->
@@ -23,7 +28,12 @@
 
     <!-- Create the world. -->
     <include file="$(find gazebo_ros)/launch/empty_world.launch">
-      <arg name="world_name" value="$(find feldschwarm_robot_devel)/worlds/curvedScenario/20_lm_curved.world"/>
+      <arg name="world_name" value="$(find feldschwarm_robot_devel)/worlds/curvedScenario/arc/20_lm_curved_v2.world"/>
+      <arg name="paused" value="$(arg paused)"/>
+      <arg name="use_sim_time" value="$(arg use_sim_time)"/>
+      <arg name="gui" value="$(arg gui)"/>
+      <arg name="headless" value="$(arg headless)"/>
+      <arg name="debug" value="$(arg debug)"/>
     </include>
 
     <!-- Spawn the vehicle. -->
@@ -50,3 +60,4 @@
   </group>
 
 </launch>
+
