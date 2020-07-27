@@ -5,10 +5,7 @@
   <include file="$(find feldschwarm_robot_devel)/launch/gps/gps_to_pose.launch"/>
   <include file="$(find feldschwarm_robot_devel)/launch/hdl_gs_launch/hdl_gicp.launch"/>
 
-
-
-
-
+   <node pkg="tf2_ros" type="static_transform_publisher" name="gps_to_map_transform" args="0 0 0   0 0 0    world map "/>
 
 
 
