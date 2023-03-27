@@ -77,7 +77,7 @@
     <color rgba="0 0 1 1"/>
   </material>
   <material name="chassis_mat">
-    <color rgba="0.5 0.5 0.5 1"/>
+    <color rgba="0.6 0.6 0.6 1"/>
   </material>
   <material name="tire_mat">
     <color rgba="0 0 0 1"/>
@@ -352,7 +352,7 @@
 
 
   <xacro:include filename="$(find velodyne_description)/urdf/VLP-16.urdf.xacro"/>
-  <VLP-16 parent="chassis" name="velodyne" topic="/velodyne_points" hz="10" samples="1024" gpu="true" lasers="16" max_range="100">
+  <VLP-16 parent="chassis" name="velodyne" topic="/velodyne_points" hz="10" samples="1024" gpu="false" lasers="16" max_range="100">
     <origin xyz="0 0 0.7" rpy="0 0 0 " />
   </VLP-16>
 
